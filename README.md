@@ -8,5 +8,5 @@ Pharmacy App
 3. If it's not started already, start the MySQL service using the services app
 4. In Visual Studio, enable the MySQL toolbar by View -> Toolbars -> MySQL, a dolphin icon should appear in the toolbar
 5. Click the icon, go add new connection, input the user id and password you created when you installed MySQL and call the database PharmacyApp
-6. If the query window hasn't appeared already, click the icon again which should bring it up, copy and paste the script from DatabaseScript.sql and run it
+6. If the query window hasn't appeared already, click the icon again which should bring it up, copy and paste the script from DatabaseScript.sql and run it (for first time run, delete the drop database line)
 7. Lastly, put in your MySQL user id and password in the connectionstring property in DatabaseContext.cs
