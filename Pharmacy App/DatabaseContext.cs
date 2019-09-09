@@ -47,26 +47,38 @@ namespace Pharmacy_App
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
                 rdr = cmd.ExecuteReader();
 
-                //Gets every result from the query
-                while (rdr.Read())
+                //Checks if the query returned nothing
+                if(!rdr.Read())
                 {
-                    //Reader must get the specific type of the result
-                    //for example, the SaleID is an Int32
-                    //and since it's the first column, access it with index 0 and so on for
-                    //other columns
-                    SalesRecord salesRecord = new SalesRecord()
+                    throw new Exception("No sales records found");
+                }
+                else
+                {
+                    //Gets every result from the query
+                    while (rdr.Read())
                     {
-                        SaleID = rdr.GetInt32(0),
-                        Product = rdr.GetString(1),
-                        DateSold = rdr.GetDateTime(2),
-                        Category = rdr.GetString(3)
-                    };
-                    salesRecords.Add(salesRecord);
+                        //Reader must get the specific type of the result
+                        //for example, the SaleID is an Int32
+                        //and since it's the first column, access it with index 0 and so on for
+                        //other columns
+                        SalesRecord salesRecord = new SalesRecord()
+                        {
+                            SaleID = rdr.GetInt32(0),
+                            Product = rdr.GetString(1),
+                            DateSold = rdr.GetDateTime(2),
+                            Category = rdr.GetString(3)
+                        };
+                        salesRecords.Add(salesRecord);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: {0}", ex.ToString());
+                //If there's a problem with the query, return null
+                //In form class, check if a database function returns null
+                //and act accordingly if true
+                Console.WriteLine(ex.ToString());
+                return null;
             }
             finally
             {
@@ -103,15 +115,23 @@ namespace Pharmacy_App
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
                 rdr = cmd.ExecuteReader();
 
-                while(rdr.Read())
+                if(!rdr.Read())
                 {
-                    salesRecords.SaleID = rdr.GetInt32(0);
-                    salesRecords.Product = rdr.GetString(1);
+                    throw new Exception("No sales record found for SaleID " + salesID);
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        salesRecords.SaleID = rdr.GetInt32(0);
+                        salesRecords.Product = rdr.GetString(1);
+                    }
                 }
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Error: {0}", ex.ToString());
+                Console.WriteLine(ex.ToString());
+                return null;
             }
             finally
             {
