@@ -1,0 +1,18 @@
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Pharmacy App.exe.config
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Pharmacy App.exe
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Pharmacy App.pdb
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\BouncyCastle.Crypto.dll
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Google.Protobuf.dll
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\MySql.Data.dll
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Renci.SshNet.dll
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Google.Protobuf.xml
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\MySql.Data.xml
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\bin\Debug\Renci.SshNet.xml
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy App.csprojAssemblyReference.cache
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy_App.Properties.Resources.resources
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy App.csproj.GenerateResource.cache
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy App.csproj.CoreCompileInputs.cache
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy App.csproj.CopyComplete
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy App.exe
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy App.pdb
+D:\Documents\Swinburne\DP2\Pharmacy App\Pharmacy App\obj\Debug\Pharmacy_App.Form1.resources
