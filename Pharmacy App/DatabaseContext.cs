@@ -21,7 +21,7 @@ namespace Pharmacy_App
         /// </summary>
         public DatabaseContext()
         {
-            connectionString = @"server=localhost;database=PharmacyApp;userid=root;password=Sharky98;";
+            connectionString = @"server=localhost;database=PharmacyApp;userid=kiandra;password=080390;";
         }
 
         /// <summary>
@@ -134,6 +134,41 @@ namespace Pharmacy_App
                 }
             }
             return salesRecords;
+        }
+
+        /// <summary>
+        /// Adds a new sales record to the database
+        /// </summary>
+        /// <param name="prod">Product name</param>
+        /// <param name="cat">Product category</param>
+        /// <param name="quan">Quantity of item sold</param>
+        /// <param name="price">Price of product sold</param>
+        /// <param name="desc">Product description</param>
+        /// <returns></returns>
+        public void NewSalesEntry(string prod, string cat, int quan, double price, string desc)
+        {
+            // New connection object
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+
+            try
+            {
+                // Opens database connection
+                // Creates and executes query string
+                cnn.Open();
+                string stm = "INSERT INTO Sales (Product, DateSold, Category, Quantity, Price, Description) VALUES ('" + prod + "', CURRENT_DATE(), '" + cat + "', " + quan + ", " + price + ", '" + desc + ");";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (cnn != null)
+                {
+                    cnn.Close();
+                }
+            }
         }
 
     }
