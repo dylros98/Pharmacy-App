@@ -1,0 +1,14 @@
+drop database PharmacyApp;
+create database PharmacyApp;
+use PharmacyApp;
+
+CREATE TABLE Sales(
+SaleID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+Product VARCHAR(50) NOT NULL,
+DateSold DATETIME NOT NULL,
+Category VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Sales (Product, DateSold, Category) VALUES ('Pills', CURRENT_DATE(), 'Medicine');
+INSERT INTO Sales (Product, DateSold, Category) VALUES ('Jellybeans', '20190501', 'Confectionery');
+INSERT INTO Sales (Product, DateSold, Category) VALUES ('Hand Wash', '20190324', 'Toiletries');
