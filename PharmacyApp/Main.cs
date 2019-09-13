@@ -22,5 +22,19 @@ namespace PharmacyApp
             Add_EditSalesRecord addRecord = new Add_EditSalesRecord();
             addRecord.Show();
         }
+
+        private void BtnWeeklyReport_Click(object sender, EventArgs e)
+        {
+            Report weeklyReport = new Report();
+            weeklyReport.setTitleText("Weekly Sales Report");
+            weeklyReport.Show();
+        }
+
+        private void BtnMonthlyReport_Click(object sender, EventArgs e)
+        {
+            Report monthlyReport = new Report();
+            monthlyReport.setTitleText("Monthly Sales Report");
+            monthlyReport.Show();
+        }
     }
 }
