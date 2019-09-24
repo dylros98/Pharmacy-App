@@ -1,7 +1,3 @@
-# Pharmacy-App
-Pharmacy App
-
-## How to set up the database
 **If you've already got MySQL Server, MySQL for Visual Studio and Connector/NET, skip to step 3**
 1. Download the MySQL installer from https://dev.mysql.com/downloads/installer/
 2. Run installer and install at least the latest verisons of MySQL Server, MySQL for Visual Studio and Connector/NET
@@ -10,3 +6,4 @@ Pharmacy App
 5. Click the icon, go add new connection, input the user id and password you created when you installed MySQL and call the database PharmacyApp
 6. If the query window hasn't appeared already, click the icon again which should bring it up, copy and paste the script from DatabaseScript.sql and run it (for first time run, delete the drop database line)
 7. Lastly, put in your MySQL user id and password in the connectionstring property in DatabaseContext.cs
+
