@@ -34,12 +34,12 @@
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblDateSold = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.btnAddRecord = new System.Windows.Forms.Button();
             this.btnEditRecord = new System.Windows.Forms.Button();
             this.btnWeeklyReport = new System.Windows.Forms.Button();
             this.btnPredict = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.lblPrice = new System.Windows.Forms.Label();
             this.btnMonthlyReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tlpDataRecords.SuspendLayout();
@@ -72,10 +72,12 @@
             this.tlpDataRecords.Location = new System.Drawing.Point(0, 0);
             this.tlpDataRecords.Name = "tlpDataRecords";
             this.tlpDataRecords.Padding = new System.Windows.Forms.Padding(5);
-            this.tlpDataRecords.RowCount = 1;
-            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDataRecords.Size = new System.Drawing.Size(716, 39);
+            this.tlpDataRecords.RowCount = 2;
+            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpDataRecords.Size = new System.Drawing.Size(716, 517);
             this.tlpDataRecords.TabIndex = 0;
+            this.tlpDataRecords.Paint += new System.Windows.Forms.PaintEventHandler(this.TlpDataRecords_Paint);
             // 
             // lblSaleID
             // 
@@ -112,6 +114,15 @@
             this.lblQuantity.Size = new System.Drawing.Size(86, 24);
             this.lblQuantity.TabIndex = 3;
             this.lblQuantity.Text = "Quantity";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(573, 6);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(53, 24);
+            this.lblPrice.TabIndex = 4;
+            this.lblPrice.Text = "Price";
             // 
             // btnAddRecord
             // 
@@ -165,15 +176,6 @@
             this.btnGenerate.Text = "Generate CSV";
             this.btnGenerate.UseVisualStyleBackColor = true;
             // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(573, 6);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(53, 24);
-            this.lblPrice.TabIndex = 4;
-            this.lblPrice.Text = "Price";
-            // 
             // btnMonthlyReport
             // 
             this.btnMonthlyReport.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -200,6 +202,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Main";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.tlpDataRecords.ResumeLayout(false);
             this.tlpDataRecords.PerformLayout();

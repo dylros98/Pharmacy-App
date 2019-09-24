@@ -36,5 +36,24 @@ namespace PharmacyApp
             monthlyReport.setTitleText("Monthly Sales Report");
             monthlyReport.Show();
         }
+
+        private void TlpDataRecords_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            int rowIndex = 1;
+            foreach(SalesRecord s in DatabaseContext.GetAllSales())
+            {
+                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Product.ToString() }, 1, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.DateSold.ToString() }, 2, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 3, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Price.ToString() }, 4, rowIndex);
+                rowIndex++;
+            }
+        }
     }
 }

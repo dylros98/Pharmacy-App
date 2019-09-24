@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\PharmacyApp"
   ],
+  "SelectedNode": "\\PharmacyApp\\DatabaseContext.cs",
   "PreviewInSolutionExplorer": false
 }
