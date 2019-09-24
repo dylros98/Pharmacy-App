@@ -1,0 +1,3 @@
+use PharmacyApp;
+
+select * from Sales;
