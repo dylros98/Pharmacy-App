@@ -12,6 +12,14 @@ namespace PharmacyApp
 {
     public partial class Add_EditSalesRecord : Form
     {
+        public int ProductID
+        {
+            get
+            {
+                return Int32.Parse(txtProductID.Text);
+            }
+        }
+
         public Add_EditSalesRecord()
         {
             InitializeComponent();
