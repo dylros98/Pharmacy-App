@@ -13,16 +13,10 @@ namespace PharmacyApp
     {
         public int SaleID { get; set; }
 
-        public string Product { get; set; }
+        public int ProductID { get; set; }
 
         public DateTime DateSold { get; set; }
 
-        public string Category { get; set; }
-
         public int Quantity { get; set; }
-
-        public double Price { get; set; }
-
-        public string Description { get; set; }
     }
 }
