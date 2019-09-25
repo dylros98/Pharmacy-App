@@ -24,6 +24,10 @@ namespace PharmacyApp
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            int prodId = Int32.Parse(txtProductID.Text);
+            int quan = Int32.Parse(txtQuantity.Text);
+
+            DatabaseContext.NewSalesEntry(prodId, quan);
 
             Close();
         }
