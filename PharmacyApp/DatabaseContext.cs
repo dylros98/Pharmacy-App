@@ -142,13 +142,10 @@ namespace PharmacyApp
         /// <summary>
         /// Adds a new sales record to the database
         /// </summary>
-        /// <param name="prod">Product name</param>
-        /// <param name="cat">Product category</param>
-        /// <param name="quan">Quantity of item sold</param>
-        /// <param name="price">Price of product sold</param>
-        /// <param name="desc">Product description</param>
+        /// <param name="prodId">Product ID</param>
+        /// <param name="quan">Quantity purchased</param>
         /// <returns></returns>
-        static public void NewSalesEntry(string prod, string cat, int quan, double price, string desc)
+        static public void NewSalesEntry(int prodId, int quan)
         {
             // New connection object
             MySqlConnection cnn = new MySqlConnection(connectionString);
@@ -156,9 +153,10 @@ namespace PharmacyApp
             try
             {
                 // Opens database connection
-                // Creates and executes query string
                 cnn.Open();
-                string stm = "INSERT INTO Sales (Product, DateSold, Category, Quantity, Price, Description) VALUES ('" + prod + "', CURRENT_DATE(), '" + cat + "', " + quan + ", " + price + ", '" + desc + ");";
+
+                // Add sale to Sales table
+                string stm = "INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (" + prodId + ", CURRENT_DATE(), " + quan + ");";
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
             }
             catch (Exception ex)
