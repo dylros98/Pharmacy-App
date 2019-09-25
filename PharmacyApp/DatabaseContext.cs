@@ -5,30 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pharmacy_App
+namespace PharmacyApp
 {
     /// <summary>
     /// Context to access the database
     /// </summary>
-    public class DatabaseContext
+    static public class DatabaseContext
     {
         //Used to connect to the database
-        private string connectionString;
-
-        /// <summary>
-        /// Initialises the connection string, input your specific username and password
-        /// you set when setting up MySQL
-        /// </summary>
-        public DatabaseContext()
-        {
-            connectionString = @"server=localhost;database=PharmacyApp;userid=;password=;";
-        }
+        static private string connectionString = @"server=localhost;database=PharmacyApp;userid=root;password=Password;";
 
         /// <summary>
         /// Gets every sale in the database
         /// </summary>
         /// <returns>A list of sales records</returns>
-        public List<SalesRecord> GetAllSales()
+        static public List<SalesRecord> GetAllSales()
         {
             //New connection object
             MySqlConnection cnn = new MySqlConnection(connectionString);
@@ -101,7 +92,7 @@ namespace Pharmacy_App
         /// </summary>
         /// <param name="salesID">ID of the specific sales record</param>
         /// <returns>The sales record</returns>
-        public SalesRecord GetSalesRecord(int salesID)
+        static public SalesRecord GetSalesRecord(int salesID)
         {
             SalesRecord salesRecords = new SalesRecord();
 
@@ -157,7 +148,7 @@ namespace Pharmacy_App
         /// <param name="price">Price of product sold</param>
         /// <param name="desc">Product description</param>
         /// <returns></returns>
-        public void NewSalesEntry(string prod, string cat, int quan, double price, string desc)
+        static public void NewSalesEntry(string prod, string cat, int quan, double price, string desc)
         {
             // New connection object
             MySqlConnection cnn = new MySqlConnection(connectionString);

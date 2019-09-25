@@ -1,26 +1,3 @@
-drop database PharmacyApp;
-create database PharmacyApp;
 use PharmacyApp;
 
-CREATE TABLE Products(
-ProductID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-Name VARCHAR(50) NOT NULL,
-Description VARCHAR(100),
-Price DOUBLE NOT NULL,
-Category VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE Sales(
-SaleID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-ProductID INT NOT NULL,
-DateSold DATETIME NOT NULL,
-Quantity INT NOT NULL,
-FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
-);
-
-INSERT INTO Products (Name, Description, Price, Category) VALUES ('Pills', 'Capsule of Pills', 5.00, 'Medicine');
-INSERT INTO Products (Name, Description, Price, Category) VALUES ('Jellybeans', 'Bag of Jellybeans', 10.50, 'Confectionary');
-INSERT INTO Products (Name, Description, Price, Category) VALUES ('Hand Wash', 'Bottle of Hand Wash', 15.00, 'Toiletries');
-
-INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (1, CURRENT_DATE(), 1);
-INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (2, '20190501', 2);
+select * from Sales;

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PharmacyAppDataSet" targetNamespace="http://tempuri.org/PharmacyAppDataSet.xsd" xmlns:mstns="http://tempuri.org/PharmacyAppDataSet.xsd" xmlns="http://tempuri.org/PharmacyAppDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PharmacyAppConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PharmacyAppConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Pharmacy_App.Properties.Settings.GlobalReference.Default.PharmacyAppConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="salesTableAdapter" GeneratorDataComponentClassName="salesTableAdapter" Name="sales" UserDataComponentName="salesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PharmacyAppConnectionString (Settings)" DbObjectName="PharmacyApp.sales" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `SaleID`, `Product` FROM `pharmacyapp`.`sales`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PharmacyAppDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PharmacyAppDataSet" msprop:Generator_UserDSName="PharmacyAppDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="sales" msprop:Generator_TableClassName="salesDataTable" msprop:Generator_TableVarName="tablesales" msprop:Generator_TablePropName="sales" msprop:Generator_RowDeletingName="salesRowDeleting" msprop:Generator_RowChangingName="salesRowChanging" msprop:Generator_RowEvHandlerName="salesRowChangeEventHandler" msprop:Generator_RowDeletedName="salesRowDeleted" msprop:Generator_UserTableName="sales" msprop:Generator_RowChangedName="salesRowChanged" msprop:Generator_RowEvArgName="salesRowChangeEvent" msprop:Generator_RowClassName="salesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

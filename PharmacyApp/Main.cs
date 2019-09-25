@@ -36,5 +36,53 @@ namespace PharmacyApp
             monthlyReport.setTitleText("Monthly Sales Report");
             monthlyReport.Show();
         }
+
+        private void TlpDataRecords_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            int rowIndex = 1;
+            foreach(SalesRecord s in DatabaseContext.GetAllSales())
+            {
+                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Product.ToString() }, 1, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.DateSold.ToString() }, 2, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 3, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Price.ToString() }, 4, rowIndex);
+                rowIndex++;
+            }
+
+            foreach (Label l in tlpDataRecords.Controls)
+            {
+                l.MouseClick += new MouseEventHandler(selectRow);
+            }
+        }
+
+        public void selectRow(object sender, MouseEventArgs e)
+        {
+            int row = tlpDataRecords.GetRow((Label)sender);
+
+            foreach (Label l in tlpDataRecords.Controls)
+            {
+                l.BackColor = Color.White;
+            }
+
+            if (row != 0)
+            {
+                tlpDataRecords.GetControlFromPosition(0, row).BackColor = Color.LightBlue;
+                tlpDataRecords.GetControlFromPosition(1, row).BackColor = Color.LightBlue;
+                tlpDataRecords.GetControlFromPosition(2, row).BackColor = Color.LightBlue;
+                tlpDataRecords.GetControlFromPosition(3, row).BackColor = Color.LightBlue;
+                tlpDataRecords.GetControlFromPosition(4, row).BackColor = Color.LightBlue;
+            }
+        }
+
+        private void TlpDataRecords_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
     }
 }
