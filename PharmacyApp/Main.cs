@@ -53,7 +53,14 @@ namespace PharmacyApp
 
         private void Main_Load(object sender, EventArgs e)
         {
-            //updateSales();
+            foreach (SalesRecord s in DatabaseContext.GetAllSales())
+            {
+                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.ProductID.ToString() }, 1, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.DateSold.ToString() }, 2, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 3, rowIndex);
+                rowIndex++;
+            }
 
             foreach (Label l in tlpDataRecords.Controls)
             {
@@ -92,17 +99,7 @@ namespace PharmacyApp
             tlpDataRecords.Controls.Add(new Label() { Text = record.ProductID.ToString() }, 1, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.DateSold.ToString() }, 2, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.Quantity.ToString() }, 3, rowIndex);
-           
-            /*int rowIndex = 1;
-            foreach (SalesRecord s in DatabaseContext.GetAllSales())
-            {
-                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Product.ToString() }, 1, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.DateSold.ToString() }, 2, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 3, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Price.ToString() }, 4, rowIndex);
-                rowIndex++;
-            }*/
+            rowIndex++;           
         }
     }
 }
