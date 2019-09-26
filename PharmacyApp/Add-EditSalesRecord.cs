@@ -34,7 +34,6 @@ namespace PharmacyApp
         {
             int prodId = Int32.Parse(txtProductID.Text);
             int quan = Int32.Parse(txtQuantity.Text);
-
             DatabaseContext.NewSalesEntry(prodId, quan);
 
             Close();

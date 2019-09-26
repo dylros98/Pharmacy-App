@@ -21,14 +21,13 @@ namespace PharmacyApp
 
         private void BtnAddRecord_Click(object sender, EventArgs e)
         {
-            SalesRecord newRecord;
+
 
             using (Add_EditSalesRecord addRecord = new Add_EditSalesRecord())
             {
                 if(addRecord.ShowDialog() == DialogResult.OK)
                 {
-                    newRecord = DatabaseContext.GetSalesRecord(addRecord.ProductID);
-                    addNewRecord(newRecord);
+                    addNewRecord();
                 }
             }
         }
@@ -86,13 +85,13 @@ namespace PharmacyApp
             
         }
 
-        public void addNewRecord(SalesRecord record)
+        public void addNewRecord()
         {
+            SalesRecord record = DatabaseContext.GetNewestSalesRecord();
             tlpDataRecords.Controls.Add(new Label() { Text = record.SaleID.ToString() }, 0, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = record.Product.ToString() }, 1, rowIndex);
+            tlpDataRecords.Controls.Add(new Label() { Text = record.ProductID.ToString() }, 1, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.DateSold.ToString() }, 2, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.Quantity.ToString() }, 3, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = record.Price.ToString() }, 4, rowIndex);
            
             /*int rowIndex = 1;
             foreach (SalesRecord s in DatabaseContext.GetAllSales())

@@ -24,3 +24,4 @@ INSERT INTO Products (Name, Description, Price, Category) VALUES ('Hand Wash', '
 
 INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (1, CURRENT_DATE(), 1);
 INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (2, '20190501', 2);
+
