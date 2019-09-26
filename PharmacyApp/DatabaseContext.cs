@@ -292,7 +292,8 @@ namespace PharmacyApp
 
         static public int[] GenerateProductIDs()
         {
-            int[] productList = new int[];
+            List<ProductRecord> check = GenerateAllProduct();
+            int[] productList = new int[check.Count()];
 
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlDataReader rdr = null;
