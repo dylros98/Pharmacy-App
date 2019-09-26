@@ -253,6 +253,62 @@ namespace PharmacyApp
             return salesRecord;
         }
 
+       /// <summary>
+       /// Gets a product with the specified product ID
+       /// </summary>
+       /// <param name="productID">The ID of the specified product</param>
+       /// <returns>The specified product</returns>
+        static public ProductRecord GetProductByProductID(int productID)
+        {
+            ProductRecord productRecord = new ProductRecord();
+
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlDataReader rdr = null;
+
+            try
+            {
+                cnn.Open();
+                string stm = "SELECT * FROM Products WHERE ProductID = "+productID;
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                rdr = cmd.ExecuteReader();
+
+                if (!rdr.HasRows)
+                {
+                    throw new Exception("No product found for product ID "+productID);
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        productRecord.ProductID = rdr.GetInt32(0);
+                        productRecord.Name = rdr.GetString(1);
+                        productRecord.Description = rdr.GetString(2);
+                        productRecord.Price = rdr.GetDouble(3);
+                        productRecord.Category = rdr.GetString(4);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                if (cnn != null)
+                {
+                    cnn.Close();
+                }
+            }
+            return productRecord;
+        }
+
         /// <summary>
         /// Adds a new sales record to the database
         /// </summary>
