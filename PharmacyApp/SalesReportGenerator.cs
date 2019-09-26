@@ -14,7 +14,8 @@ namespace PharmacyApp
     }
 
     private List<SalesReport> ReportList(){
-        List<ProductRecord> products = db.GenerateallProduct();
+
+        List<ProductRecord> products = db.GenerateAllProduct();
         int[] sales = db.GenerateSalesAmounts();
         List<SalesReport> report = new SalesReport();
         int i = 0;
