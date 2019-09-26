@@ -290,5 +290,172 @@ namespace PharmacyApp
             return salesRecord;
         }
 
+        static public int[] GenerateProductIDs()
+        {
+            int[] productList = new int[];
+
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlDataReader rdr = null;
+
+            try
+            {
+                cnn.Open();
+
+                string stm = "SELECT ProductId FROM Product";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                rdr = cmd.ExecuteReader();
+
+                if (!rdr.HasRows)
+                {
+                    throw new Exception("No sales records found!");
+                }
+                else
+                {
+                    int i = 0;
+                    while (rdr.Read())
+                    {
+                        productList[i] = rdr.GetInt32(0);
+                        i++;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                if (cnn != null)
+                {
+                    cnn.Close();
+                }
+            }
+
+            return productList;
+            
+        }
+
+        static public List<ProductRecord> GenerateAllProduct()
+        {
+            List<ProductRecord> productList = new List<ProductRecord>();
+
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlDataReader rdr = null;
+
+            try
+            {
+                cnn.Open();
+
+                string stm = "SELECT * FROM Product";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                rdr = cmd.ExecuteReader();
+
+                if (!rdr.HasRows)
+                {
+                    throw new Exception("No sales records found!");
+                }
+                else
+                {
+                    int i = 0;
+                    while (rdr.Read())
+                    {
+                        productList.Add(new ProductRecord()
+                        {
+                            ProductID = rdr.GetInt32(0),
+                            Name = rdr.GetString(1),
+                            Description = rdr.GetString(2),
+                            Double = rdr.GetDouble(3),
+                            Category = rdr.GetString(4)
+                        });
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                if (cnn != null)
+                {
+                    cnn.Close();
+                }
+            }
+
+            return productList;
+
+        }
+
+        static public int[] GenerateSalesAmounts()
+        {
+            int[] productList = GenerateProductIDs();
+            SalesRecord[] record = new SalesRecord[productList.Count()];
+            int[] salesAmounts = new int[productList.Count()];
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlDataReader rdr = null;
+            int i = 0;
+
+            foreach (int product in productList)
+            {
+
+                try
+                {
+                    cnn.Open();
+
+                    string stm = "SELECT SUM(Quantity) FROM SalesId WHERE ProductID = " + productList[i];
+                    MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                    rdr = cmd.ExecuteReader();
+
+                    if (!rdr.HasRows)
+                    {
+                        throw new Exception("No sales records found!");
+                    }
+                    else
+                    {
+                        while (rdr.Read())
+                        {
+                            salesAmounts[i] = rdr.GetInt32(0);
+                            i++;
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    return null;
+                }
+                finally
+                {
+                    if (rdr != null)
+                    {
+                        rdr.Close();
+                    }
+
+                    if (cnn != null)
+                    {
+                        cnn.Close();
+                    }
+                }
+            }
+
+            return salesAmounts;
+
+        }
+
     }
 }
