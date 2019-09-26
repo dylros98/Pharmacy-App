@@ -13,7 +13,7 @@ namespace PharmacyApp
     static public class DatabaseContext
     {
         //Used to connect to the database
-        static private string connectionString = @"server=localhost;database=PharmacyApp;userid=root;password=Sharky98;";
+        static private string connectionString = @"server=localhost;database=PharmacyApp;userid=root;password=Password;";
 
         /// <summary>
         /// Gets every sale in the database
