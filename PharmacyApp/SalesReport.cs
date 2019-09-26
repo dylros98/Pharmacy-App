@@ -17,8 +17,8 @@ namespace PharmacyApp
 
         public int Quantity { get; set; }
 
-        public int Price { get; set; }
+        public double Price { get; set; }
 
-        public int Total { get; set; }
+        public double Total { get; set; }
     }
 }

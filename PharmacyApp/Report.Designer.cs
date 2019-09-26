@@ -67,9 +67,10 @@
             this.tlpDataRecords.Location = new System.Drawing.Point(0, 0);
             this.tlpDataRecords.Name = "tlpDataRecords";
             this.tlpDataRecords.Padding = new System.Windows.Forms.Padding(5);
-            this.tlpDataRecords.RowCount = 1;
-            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDataRecords.Size = new System.Drawing.Size(716, 39);
+            this.tlpDataRecords.RowCount = 2;
+            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpDataRecords.Size = new System.Drawing.Size(716, 469);
             this.tlpDataRecords.TabIndex = 0;
             // 
             // lbl
@@ -127,7 +128,7 @@
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Weekly Sales Report";
             // 
-            // WeeklyReport
+            // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +136,7 @@
             this.ClientSize = new System.Drawing.Size(745, 549);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel1);
-            this.Name = "WeeklyReport";
+            this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.WeeklyReport_Load);
             this.panel1.ResumeLayout(false);

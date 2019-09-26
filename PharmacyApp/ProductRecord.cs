@@ -17,7 +17,7 @@ namespace PharmacyApp
 
         public string Description { get; set; }
 
-        public double Double { get; set; }
+        public double Price { get; set; }
 
         public string Category { get; set; }
     }
