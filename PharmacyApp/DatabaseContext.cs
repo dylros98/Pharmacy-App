@@ -290,7 +290,7 @@ namespace PharmacyApp
             return salesRecord;
         }
 
-        static public int[] GenerateProductList()
+        static public int[] GenerateProductIDs()
         {
             int[] productList = new int[];
 
@@ -400,9 +400,9 @@ namespace PharmacyApp
 
         }
 
-        static public SalesRecord[] GenerateSales(int[] productList)
+        static public int[] GenerateSalesAmounts()
         {
-
+            int[] productList = GenerateProductIDs();
             SalesRecord[] record = new SalesRecord[productList.Count()];
             int[] salesAmounts = new int[productList.Count()];
             MySqlConnection cnn = new MySqlConnection(connectionString);
@@ -453,7 +453,7 @@ namespace PharmacyApp
                 }
             }
 
-            return record;
+            return salesAmounts;
 
         }
 
