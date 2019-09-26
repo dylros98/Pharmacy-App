@@ -32,7 +32,6 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -72,16 +71,6 @@
             this.txtQuantity.Size = new System.Drawing.Size(398, 32);
             this.txtQuantity.TabIndex = 6;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(97, 199);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 43);
-            this.btnDelete.TabIndex = 8;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // btnSave
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -101,7 +90,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(613, 285);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.lblQuantity);
@@ -120,7 +108,6 @@
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.TextBox txtQuantity;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
     }
 }

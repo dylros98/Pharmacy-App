@@ -145,6 +145,7 @@
             this.btnEditRecord.TabIndex = 2;
             this.btnEditRecord.Text = "Edit Record";
             this.btnEditRecord.UseVisualStyleBackColor = true;
+            this.btnEditRecord.Click += new System.EventHandler(this.BtnEditRecord_Click);
             // 
             // btnWeeklyReport
             // 

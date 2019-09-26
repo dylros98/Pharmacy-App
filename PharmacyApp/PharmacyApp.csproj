@@ -66,13 +66,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add-EditSalesRecord.cs">
+    <Compile Include="AddSalesRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add-EditSalesRecord.Designer.cs">
-      <DependentUpon>Add-EditSalesRecord.cs</DependentUpon>
+    <Compile Include="AddSalesRecord.Designer.cs">
+      <DependentUpon>AddSalesRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="EditSalesRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSalesRecord.Designer.cs">
+      <DependentUpon>EditSalesRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +97,11 @@
       <DependentUpon>Report.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesRecord.cs" />
-    <EmbeddedResource Include="Add-EditSalesRecord.resx">
-      <DependentUpon>Add-EditSalesRecord.cs</DependentUpon>
+    <EmbeddedResource Include="AddSalesRecord.resx">
+      <DependentUpon>AddSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSalesRecord.resx">
+      <DependentUpon>EditSalesRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
