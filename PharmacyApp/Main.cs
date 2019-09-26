@@ -101,5 +101,16 @@ namespace PharmacyApp
             tlpDataRecords.Controls.Add(new Label() { Text = record.Quantity.ToString() }, 3, rowIndex);
             rowIndex++;           
         }
+
+        private void BtnEditRecord_Click(object sender, EventArgs e)
+        {
+            using (EditSalesRecord editRecord = new EditSalesRecord())
+            {
+                if (editRecord.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
+        }
     }
 }
