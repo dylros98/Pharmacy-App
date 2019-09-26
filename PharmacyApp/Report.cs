@@ -13,22 +13,25 @@ namespace PharmacyApp
     public partial class Report : Form
     {
         private int rowIndex = 1;
-        public Report()
+        private List<SalesReport> reportList;
+
+        public Report(List<SalesReport> List)
         {
+            reportList = List;
             InitializeComponent();
         }
 
         private void WeeklyReport_Load(object sender, EventArgs e)
         {
-           /* foreach ( s in )
+           foreach (SalesReport s in reportList)
             {
-                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Product.ToString() }, 1, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.DateSold.ToString() }, 2, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 3, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Price.ToString() }, 4, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.ProductID.ToString() }, 0, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Name.ToString() }, 1, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 2, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Price.ToString() }, 3, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.Total.ToString() }, 4, rowIndex);
                 rowIndex++;
-            }*/
+            }
         }
     }
 }

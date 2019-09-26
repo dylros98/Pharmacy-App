@@ -14,15 +14,15 @@ namespace PharmacyApp
     {
 
         private int rowIndex = 1;
+        private SalesReportGenerator List;
         public Main()
         {
+            List = new SalesReportGenerator();
             InitializeComponent();
         }
 
         private void BtnAddRecord_Click(object sender, EventArgs e)
         {
-
-
             using (Add_EditSalesRecord addRecord = new Add_EditSalesRecord())
             {
                 if(addRecord.ShowDialog() == DialogResult.OK)
@@ -34,14 +34,14 @@ namespace PharmacyApp
 
         private void BtnWeeklyReport_Click(object sender, EventArgs e)
         {
-            Report weeklyReport = new Report();
+            Report weeklyReport = new Report(List.ReportList());
             weeklyReport.setTitleText("Weekly Sales Report");
             weeklyReport.Show();
         }
 
         private void BtnMonthlyReport_Click(object sender, EventArgs e)
         {
-            Report monthlyReport = new Report();
+            Report monthlyReport = new Report(List.ReportList());
             monthlyReport.setTitleText("Monthly Sales Report");
             monthlyReport.Show();
         }

@@ -82,6 +82,7 @@
     <Compile Include="ProductRecord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesReport.cs" />
     <Compile Include="SalesReportGenerator.cs" />
     <Compile Include="Report.cs">
       <SubType>Form</SubType>

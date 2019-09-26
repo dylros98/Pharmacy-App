@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpDataRecords = new System.Windows.Forms.TableLayoutPanel();
             this.lblSaleID = new System.Windows.Forms.Label();
-            this.lblProductID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.lblDateSold = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.tlpDataRecords.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDataRecords.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpDataRecords.Controls.Add(this.lblSaleID, 0, 0);
-            this.tlpDataRecords.Controls.Add(this.lblProductID, 1, 0);
+            this.tlpDataRecords.Controls.Add(this.lblName, 1, 0);
             this.tlpDataRecords.Controls.Add(this.lblDateSold, 2, 0);
             this.tlpDataRecords.Controls.Add(this.lblQuantity, 3, 0);
             this.tlpDataRecords.Controls.Add(this.lblPrice, 4, 0);
@@ -89,14 +89,14 @@
             this.lblSaleID.TabIndex = 0;
             this.lblSaleID.Text = "Sale ID";
             // 
-            // lblProductID
+            // lblName
             // 
-            this.lblProductID.AutoSize = true;
-            this.lblProductID.Location = new System.Drawing.Point(147, 1);
-            this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(104, 24);
-            this.lblProductID.TabIndex = 1;
-            this.lblProductID.Text = "Product ID";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(147, 1);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(62, 24);
+            this.lblName.TabIndex = 1;
+            this.lblName.Text = "Name";
             // 
             // lblDateSold
             // 
@@ -216,7 +216,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tlpDataRecords;
         private System.Windows.Forms.Label lblSaleID;
-        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblDateSold;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Button btnAddRecord;

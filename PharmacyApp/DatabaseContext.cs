@@ -302,7 +302,7 @@ namespace PharmacyApp
             {
                 cnn.Open();
 
-                string stm = "SELECT ProductId FROM Product";
+                string stm = "SELECT ProductId FROM Products";
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
                 rdr = cmd.ExecuteReader();
 
@@ -354,7 +354,7 @@ namespace PharmacyApp
             {
                 cnn.Open();
 
-                string stm = "SELECT * FROM Product";
+                string stm = "SELECT * FROM Products";
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
                 rdr = cmd.ExecuteReader();
 
@@ -372,7 +372,7 @@ namespace PharmacyApp
                             ProductID = rdr.GetInt32(0),
                             Name = rdr.GetString(1),
                             Description = rdr.GetString(2),
-                            Double = rdr.GetDouble(3),
+                            Price = rdr.GetDouble(3),
                             Category = rdr.GetString(4)
                         });
                     }
@@ -417,7 +417,7 @@ namespace PharmacyApp
                 {
                     cnn.Open();
 
-                    string stm = "SELECT SUM(Quantity) FROM SalesId WHERE ProductID = " + productList[i];
+                    string stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productList[i];
                     MySqlCommand cmd = new MySqlCommand(stm, cnn);
                     rdr = cmd.ExecuteReader();
 
