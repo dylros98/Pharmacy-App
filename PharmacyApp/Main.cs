@@ -53,7 +53,8 @@ namespace PharmacyApp
 
         private void Main_Load(object sender, EventArgs e)
         {
-            foreach (SalesRecord s in DatabaseContext.GetAllSales())
+            List<SalesRecord> allSales = DatabaseContext.GetAllSales();
+            foreach (SalesRecord s in allSales)
             {
                 ProductRecord p = DatabaseContext.GetProductByProductID(s.ProductID);
 
