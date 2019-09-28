@@ -346,6 +346,29 @@ namespace PharmacyApp
             return salesRecord;
         }
 
+        static public void EditSalesRecord(int saleId, int prodId, int quan, string dateTime)
+        {
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            try
+            {
+                cnn.Open();
+
+                DateTime dt = DateTime.Parse(dateTime);
+                string stm = "UPDATE Sales SET ProductID = " + prodId + ", DateSold = " + dt + ", Quantity = " + quan + " WHERE SaleID = " + saleId + ";";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (cnn != null)
+                    cnn.Close();
+            }
+        }
+
         static public int[] GenerateProductIDs()
         {
             List<ProductRecord> check = GenerateAllProduct();
@@ -420,7 +443,6 @@ namespace PharmacyApp
                 }
                 else
                 {
-                    int i = 0;
                     while (rdr.Read())
                     {
                         productList.Add(new ProductRecord()

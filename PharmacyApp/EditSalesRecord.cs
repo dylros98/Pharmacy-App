@@ -12,34 +12,15 @@ namespace PharmacyApp
 {
     public partial class EditSalesRecord : Form
     {
-        /*private string productID;
-        private string quantity;
-        private string dateSold;
+        private SalesRecord saleRecord;
 
-
-        public string ProductID
+        public SalesRecord SaleRecord
         {
             set
             {
-                productID = value;
+                saleRecord = value;
             }
         }
-
-        public string Quantity
-        {
-            set
-            {
-                quantity = value;
-            }
-        }
-
-        public string DateSold
-        {
-            set
-            {
-                dateSold = value;
-            }
-        }*/
 
         public EditSalesRecord()
         {
@@ -48,7 +29,21 @@ namespace PharmacyApp
 
         private void EditSalesRecord_Load(object sender, EventArgs e)
         {
+            txtProductID.Text = saleRecord.ProductID.ToString();
+            txtQuantity.Text = saleRecord.Quantity.ToString();
+            txtDateSold.Text = saleRecord.DateSold.ToString("dd-MMM-yy");
+        }
 
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            int saleId = saleRecord.SaleID;
+            int prodId = Int32.Parse(txtProductID.Text);
+            int quan = Int32.Parse(txtQuantity.Text);
+            string dt = txtDateSold.Text;
+
+            DatabaseContext.EditSalesRecord(saleId, prodId, quan, dt);
+
+            Close();
         }
     }
 }

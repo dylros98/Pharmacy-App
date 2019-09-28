@@ -15,6 +15,8 @@ namespace PharmacyApp
 
         private int rowIndex = 1;
         private SalesReportGenerator List;
+        private int selectedRow;
+
         public Main()
         {
             List = new SalesReportGenerator();
@@ -88,6 +90,9 @@ namespace PharmacyApp
                 tlpDataRecords.GetControlFromPosition(2, row).BackColor = Color.LightBlue;
                 tlpDataRecords.GetControlFromPosition(3, row).BackColor = Color.LightBlue;
                 tlpDataRecords.GetControlFromPosition(4, row).BackColor = Color.LightBlue;
+
+                // Used for data retrieval foe editing sales records
+                selectedRow = row;
             }
         }
 
@@ -113,6 +118,9 @@ namespace PharmacyApp
         {
             using (EditSalesRecord editRecord = new EditSalesRecord())
             {
+                SalesRecord saleData = DatabaseContext.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
+                editRecord.SaleRecord = saleData;
+
                 if (editRecord.ShowDialog() == DialogResult.OK)
                 {
 
