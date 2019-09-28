@@ -9,11 +9,11 @@ namespace PharmacyApp
 
     class SalesReportGenerator
     {
-        public List<SalesReport> ReportList()
+        public List<SalesReport> ReportList(bool monthly)
         {
 
             List<ProductRecord> products = DatabaseContext.GenerateAllProduct();
-            int[] sales = DatabaseContext.GenerateSalesAmounts();
+            int[] sales = DatabaseContext.GenerateSalesAmounts(monthly);
             List<SalesReport> report = new List<SalesReport>();
             int i = 0;
 

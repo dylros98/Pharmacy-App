@@ -420,7 +420,6 @@ namespace PharmacyApp
                 }
                 else
                 {
-                    int i = 0;
                     while (rdr.Read())
                     {
                         productList.Add(new ProductRecord()
@@ -457,7 +456,7 @@ namespace PharmacyApp
 
         }
 
-        static public int[] GenerateSalesAmounts()
+        static public int[] GenerateSalesAmounts(bool monthly)
         {
             int[] productList = GenerateProductIDs();
             SalesRecord[] record = new SalesRecord[productList.Count()];
@@ -466,14 +465,20 @@ namespace PharmacyApp
             MySqlDataReader rdr = null;
             int i = 0;
 
-            foreach (int product in productList)
+            try
             {
-
-                try
+                cnn.Open();
+                foreach (int product in productList)
                 {
-                    cnn.Open();
-
-                    string stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productList[i];
+                    string stm = "";
+                    if (monthly)
+                    {
+                        stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productList[i] + " AND  DATEPART(m, DateSold) = DATEPART(m, DATEADD(m, -1 getdate())" +
+                            " AND DATEPART(yyyy, DateSold) = DATEPART(yyyy, DATEADD(m, -1 getdate()))";
+                    }
+                    else {
+                        stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productList[i] + " AND  DateSold >= DATEADD(day, -7, GETDATE()))";
+                    }
                     MySqlCommand cmd = new MySqlCommand(stm, cnn);
                     rdr = cmd.ExecuteReader();
 
@@ -491,22 +496,22 @@ namespace PharmacyApp
                     }
 
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                if (rdr != null)
                 {
-                    Console.WriteLine(ex.ToString());
-                    return null;
+                    rdr.Close();
                 }
-                finally
-                {
-                    if (rdr != null)
-                    {
-                        rdr.Close();
-                    }
 
-                    if (cnn != null)
-                    {
-                        cnn.Close();
-                    }
+                if (cnn != null)
+                {
+                    cnn.Close();
                 }
             }
 
