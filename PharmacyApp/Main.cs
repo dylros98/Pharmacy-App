@@ -15,7 +15,7 @@ namespace PharmacyApp
 
         private int rowIndex = 1;
         private SalesReportGenerator List;
-        private int selectedRow;
+        private int selectedRow = 1;
 
         public Main()
         {
