@@ -469,13 +469,10 @@ namespace PharmacyApp
                     string stm = "";
                     if (monthly)
                     {
-                    //  stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + " AND  DATEPART(m, DateSold) = DATEPART(m, DATEADD(m, -1 getdate())" +
-                    //      " AND DATEPART(yyyy, DateSold) = DATEPART(yyyy, DATEADD(m, -1 getdate()))";
-                    stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID;
+                      stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + "DateSold BETWEEN CURDATE()-INTERVAL 1 MONTH AND CURDATE()";
                     }
                     else {
-                    //  stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + " AND  DateSold >= DATEADD(day, -7, GETDATE()))";
-                    stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID;
+                      stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + " AND DateSold BETWEEN CURDATE()-INTERVAL 1 WEEK AND CURDATE()";
                     }
                     MySqlCommand cmd = new MySqlCommand(stm, cnn);
                     rdr = cmd.ExecuteReader();
@@ -495,7 +492,7 @@ namespace PharmacyApp
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return null;
+                return 0;
             }
             finally
             {
