@@ -11,11 +11,8 @@ namespace PharmacyApp
     {
         public List<SalesReport> ReportList(bool monthly)
         {
-
             List<ProductRecord> products = DatabaseContext.GenerateAllProduct();
-            int[] sales = DatabaseContext.GenerateSalesAmounts(monthly);
             List<SalesReport> report = new List<SalesReport>();
-            int i = 0;
 
             foreach (ProductRecord record in products)
             {
@@ -23,9 +20,9 @@ namespace PharmacyApp
                 {
                     ProductID = record.ProductID,
                     Name = record.Name,
-                    Quantity = sales[i],
+                    Quantity = DatabaseContext.GenerateSalesAmount(record.ProductID, monthly),
                     Price = record.Price,
-                    Total = Convert.ToDouble(sales[i]) * record.Price
+                    Total = Convert.ToDouble(DatabaseContext.GenerateSalesAmount(record.ProductID, monthly)) * record.Price
                 });
             }
 
