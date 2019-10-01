@@ -456,28 +456,23 @@ namespace PharmacyApp
 
         }
 
-        static public int[] GenerateSalesAmounts(bool monthly)
+        static public int GenerateSalesAmount(int ID, bool monthly)
         {
-            int[] productList = GenerateProductIDs();
-            SalesRecord[] record = new SalesRecord[productList.Count()];
-            int[] salesAmounts = new int[productList.Count()];
             MySqlConnection cnn = new MySqlConnection(connectionString);
             MySqlDataReader rdr = null;
-            int i = 0;
+            int value = 0;
 
             try
             {
                 cnn.Open();
-                foreach (int product in productList)
-                {
+
                     string stm = "";
                     if (monthly)
                     {
-                        stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productList[i] + " AND  DATEPART(m, DateSold) = DATEPART(m, DATEADD(m, -1 getdate())" +
-                            " AND DATEPART(yyyy, DateSold) = DATEPART(yyyy, DATEADD(m, -1 getdate()))";
+                      stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + "DateSold BETWEEN CURDATE()-INTERVAL 1 MONTH AND CURDATE()";
                     }
                     else {
-                        stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productList[i] + " AND  DateSold >= DATEADD(day, -7, GETDATE()))";
+                      stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + " AND DateSold BETWEEN CURDATE()-INTERVAL 1 WEEK AND CURDATE()";
                     }
                     MySqlCommand cmd = new MySqlCommand(stm, cnn);
                     rdr = cmd.ExecuteReader();
@@ -490,17 +485,14 @@ namespace PharmacyApp
                     {
                         while (rdr.Read())
                         {
-                            salesAmounts[i] = rdr.GetInt32(0);
-                            i++;
+                            value = rdr.GetInt32(0);
                         }
                     }
-
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return null;
+                return 0;
             }
             finally
             {
@@ -515,7 +507,7 @@ namespace PharmacyApp
                 }
             }
 
-            return salesAmounts;
+            return value;
 
         }
 
