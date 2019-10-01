@@ -346,6 +346,50 @@ namespace PharmacyApp
             return salesRecord;
         }
 
+        static public void EditSalesRecord(int saleId, int prodId, int quan, string dateTime)
+        {
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            try
+            {
+                cnn.Open();
+
+                // Date needs to be parsed manually to update in database
+                // Note: this was done fast and messy. I'll try to clean it up next sprint.
+                string[] date = dateTime.Split('-');
+                string[] months = {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+                int monthNum = 0;
+
+                for (int i = 0; i < 12; i++)
+                {
+                    if (months[i] == date[1])
+                        monthNum = i + 1;
+                }
+                string monthStr = monthNum.ToString();
+
+                if (monthStr.Length == 1)
+                    monthStr = "0" + monthStr;
+
+                if (date[0].Length == 1)
+                    date[0] = "0" + date[0];
+
+                string parsedDate = "20" + date[2] + monthStr + date[0];
+                Console.WriteLine(parsedDate);
+                
+                string stm = "UPDATE Sales SET ProductID = " + prodId + ", DateSold = " + parsedDate + ", Quantity = " + quan + " WHERE SaleID = " + saleId + ";";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (cnn != null)
+                    cnn.Close();
+            }
+        }
+
         static public int[] GenerateProductIDs()
         {
             List<ProductRecord> check = GenerateAllProduct();
