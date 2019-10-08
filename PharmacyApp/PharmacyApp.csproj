@@ -73,11 +73,23 @@
       <DependentUpon>AddSalesRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="DateSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateSelection.Designer.cs">
+      <DependentUpon>DateSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditSalesRecord.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditSalesRecord.Designer.cs">
       <DependentUpon>EditSalesRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Database.Designer.cs">
+      <DependentUpon>Database.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -100,8 +112,14 @@
     <EmbeddedResource Include="AddSalesRecord.resx">
       <DependentUpon>AddSalesRecord.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DateSelection.resx">
+      <DependentUpon>DateSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditSalesRecord.resx">
       <DependentUpon>EditSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Database.resx">
+      <DependentUpon>Database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
