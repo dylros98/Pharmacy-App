@@ -513,7 +513,7 @@ namespace PharmacyApp
                     string stm = "";
                     if (monthly)
                     {
-                      stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + "DateSold BETWEEN CURDATE()-INTERVAL 1 MONTH AND CURDATE()";
+                      stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + " AND DateSold BETWEEN CURDATE()-INTERVAL 1 MONTH AND CURDATE()";
                     }
                     else {
                       stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + ID + " AND DateSold BETWEEN CURDATE()-INTERVAL 1 WEEK AND CURDATE()";
