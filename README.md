@@ -1,3 +1,6 @@
+How to set up the MySQL Database
+================================
+
 **If you've already got MySQL Server, MySQL for Visual Studio and Connector/NET, skip to step 3**
 1. Download the MySQL installer from https://dev.mysql.com/downloads/installer/
 2. Run installer and install at least the latest verisons of MySQL Server, MySQL for Visual Studio and Connector/NET
