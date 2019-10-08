@@ -25,7 +25,7 @@ namespace PharmacyApp
                     Total = Convert.ToDouble(DatabaseContext.GenerateSalesAmount(record.ProductID, monthly)) * record.Price
                 });
             }
-
+            DatabaseContext.SaveSalesReport(report);
             return report;
 
         }

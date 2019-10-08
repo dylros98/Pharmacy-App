@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -509,6 +510,45 @@ namespace PharmacyApp
 
             return value;
 
+        }
+
+        /// <summary>
+        /// Writes a generated monthly/weekly report to a .csv file,
+        /// located inside the topmost directory of the project
+        /// Currently displays date range as a week ago from current date
+        /// Automatically runs when a report is generated
+        /// </summary>
+        /// <param name="report"></param>
+        static public void SaveSalesReport(List<SalesReport> report)
+        {
+            //TODO -- Add property to report to tell if it's monthly or weekly to read off
+            if(!File.Exists("..\\..\\reports.csv"))
+            {
+                using (var file = File.CreateText("..\\..\\..\\reports.csv"))
+                {
+                    file.WriteLine("Date Range:," + DateTime.Now.AddDays(-7).Date.ToString() + "," + DateTime.Now.Date.ToString());
+                    file.WriteLine("ProductID,Name,Quantity,Price,Total");
+                    foreach (SalesReport s in report)
+                    {
+                        file.WriteLine(s.ProductID + "," + s.Name + "," + s.Quantity + "," + s.Price + "," + s.Total);
+                    }
+                    file.WriteLine();
+                }
+            }
+            else
+            {
+                using(var file = File.AppendText("..\\..\\..\\reports.csv"))
+                {
+                    file.WriteLine("Date Range:," + DateTime.Now.AddDays(-7).Date.ToString() + "," + DateTime.Now.Date.ToString());
+                    file.WriteLine("ProductID,Name,Quantity,Price,Total");
+                    foreach (SalesReport s in report)
+                    {
+                        file.WriteLine(s.ProductID + "," + s.Name + "," + s.Quantity + "," + s.Price + "," + s.Total);
+                    }
+                    file.WriteLine();
+                }
+            }
+            
         }
 
     }
