@@ -30,7 +30,7 @@ namespace PharmacyApp
         private void BtnMonthlyReport_Click(object sender, EventArgs e)
         {
             Report monthlyReport = new Report(List.ReportList(true));
-            monthlyReport.setTitleText("Weekly Sales Report");
+            monthlyReport.setTitleText("Monthly Sales Report");
             monthlyReport.Show();
         }
     }
