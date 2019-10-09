@@ -50,7 +50,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(12, 101);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 428);
+            this.panel1.Size = new System.Drawing.Size(907, 428);
             this.panel1.TabIndex = 1;
             // 
             // tlpDataRecords
@@ -74,9 +74,9 @@
             this.tlpDataRecords.Name = "tlpDataRecords";
             this.tlpDataRecords.Padding = new System.Windows.Forms.Padding(5);
             this.tlpDataRecords.RowCount = 2;
+            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpDataRecords.Size = new System.Drawing.Size(842, 422);
+            this.tlpDataRecords.Size = new System.Drawing.Size(907, 422);
             this.tlpDataRecords.TabIndex = 0;
             // 
             // lbl
@@ -84,7 +84,7 @@
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(175, 6);
+            this.lbl.Location = new System.Drawing.Point(188, 6);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(99, 34);
             this.lbl.TabIndex = 6;
@@ -106,7 +106,7 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(507, 6);
+            this.lblPrice.Location = new System.Drawing.Point(546, 6);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(83, 34);
             this.lblPrice.TabIndex = 4;
@@ -117,7 +117,7 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(341, 6);
+            this.lblQuantity.Location = new System.Drawing.Point(367, 6);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(134, 34);
             this.lblQuantity.TabIndex = 3;
@@ -128,7 +128,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(673, 6);
+            this.lblTotal.Location = new System.Drawing.Point(725, 6);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(79, 34);
             this.lblTotal.TabIndex = 5;
@@ -147,20 +147,20 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(181)))), ((int)(((byte)(191)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(179)))), ((int)(((byte)(209)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Location = new System.Drawing.Point(-2, -2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(885, 88);
+            this.panel2.Size = new System.Drawing.Size(938, 88);
             this.panel2.TabIndex = 5;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(179)))), ((int)(((byte)(209)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(181)))), ((int)(((byte)(191)))));
             this.panel3.Location = new System.Drawing.Point(-1, 68);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(883, 20);
+            this.panel3.Size = new System.Drawing.Size(936, 20);
             this.panel3.TabIndex = 5;
             // 
             // Report
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(867, 541);
+            this.ClientSize = new System.Drawing.Size(931, 541);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Report";
