@@ -25,7 +25,7 @@ namespace PharmacyApp
         {
             using (Add_EditSalesRecord addRecord = new Add_EditSalesRecord())
             {
-                if(addRecord.ShowDialog() == DialogResult.OK)
+                if (addRecord.ShowDialog() == DialogResult.OK)
                 {
                     addNewRecord();
                 }
@@ -39,11 +39,11 @@ namespace PharmacyApp
             {
                 ProductRecord p = DatabaseContext.GetProductByProductID(s.ProductID);
 
-                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString()}, 0, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
                 tlpDataRecords.Controls.Add(new Label() { Text = p.Name.ToString() }, 1, rowIndex);
                 tlpDataRecords.Controls.Add(new Label() { Text = s.DateSold.ToString() }, 2, rowIndex);
                 tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 3, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = "$"+(p.Price*s.Quantity).ToString() }, 4, rowIndex);
+                tlpDataRecords.Controls.Add(new Label() { Text = "$" + (p.Price * s.Quantity).ToString() }, 4, rowIndex);
                 rowIndex++;
             }
 
@@ -83,13 +83,13 @@ namespace PharmacyApp
             tlpDataRecords.Controls.Add(new Label() { Text = pRecord.Name.ToString() }, 1, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.DateSold.ToString() }, 2, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.Quantity.ToString() }, 3, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = "$"+(pRecord.Price*record.Quantity).ToString() }, 4, rowIndex);
-            rowIndex++;           
+            tlpDataRecords.Controls.Add(new Label() { Text = "$" + (pRecord.Price * record.Quantity).ToString() }, 4, rowIndex);
+            rowIndex++;
         }
 
         private void BtnEditRecord_Click(object sender, EventArgs e)
         {
-            if(selectedRow == 0)
+            if (selectedRow == 0)
             {
                 MessageBox.Show("Please select a sales record to edit first.");
             }
@@ -115,7 +115,15 @@ namespace PharmacyApp
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void addNewProduct_Click(object sender, EventArgs e)
+        {
+            using (AddNewProduct addNewProduct = new AddNewProduct())
+            {
+                addNewProduct.ShowDialog();
+            }
         }
     }
 }
