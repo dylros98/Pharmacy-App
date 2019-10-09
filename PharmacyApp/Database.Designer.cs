@@ -39,6 +39,8 @@
             this.btnEditRecord = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tlpDataRecords.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -47,9 +49,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.tlpDataRecords);
-            this.panel1.Location = new System.Drawing.Point(12, 76);
+            this.panel1.Location = new System.Drawing.Point(12, 106);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 557);
+            this.panel1.Size = new System.Drawing.Size(781, 527);
             this.panel1.TabIndex = 0;
             // 
             // tlpDataRecords
@@ -75,7 +77,7 @@
             this.tlpDataRecords.RowCount = 2;
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDataRecords.Size = new System.Drawing.Size(781, 557);
+            this.tlpDataRecords.Size = new System.Drawing.Size(781, 527);
             this.tlpDataRecords.TabIndex = 0;
             // 
             // lblSaleID
@@ -134,7 +136,7 @@
             this.btnAddRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddRecord.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddRecord.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAddRecord.Location = new System.Drawing.Point(819, 150);
+            this.btnAddRecord.Location = new System.Drawing.Point(819, 151);
             this.btnAddRecord.Name = "btnAddRecord";
             this.btnAddRecord.Size = new System.Drawing.Size(129, 80);
             this.btnAddRecord.TabIndex = 1;
@@ -158,22 +160,45 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 9);
+            this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(966, 59);
+            this.label1.Size = new System.Drawing.Size(648, 39);
             this.label1.TabIndex = 3;
             this.label1.Text = "People Health Pharmacy - Sales Records";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(181)))), ((int)(((byte)(191)))));
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(981, 70);
+            this.panel2.Size = new System.Drawing.Size(981, 88);
             this.panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(179)))), ((int)(((byte)(209)))));
+            this.panel3.Location = new System.Drawing.Point(-1, 69);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(996, 20);
+            this.panel3.TabIndex = 6;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(206)))), ((int)(((byte)(211)))));
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(819, 553);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(129, 80);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // Database
             // 
@@ -181,6 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(978, 645);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnEditRecord);
             this.Controls.Add(this.btnAddRecord);
@@ -210,6 +236,8 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnBack;
     }
 }
 
