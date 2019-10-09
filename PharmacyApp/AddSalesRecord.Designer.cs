@@ -62,6 +62,7 @@
             // 
             // txtProductID
             // 
+            this.txtProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductID.Location = new System.Drawing.Point(229, 65);
             this.txtProductID.Name = "txtProductID";
@@ -70,6 +71,7 @@
             // 
             // txtQuantity
             // 
+            this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantity.Location = new System.Drawing.Point(229, 125);
             this.txtQuantity.Name = "txtQuantity";
