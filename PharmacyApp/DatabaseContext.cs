@@ -555,5 +555,40 @@ namespace PharmacyApp
 
         }
 
+        /// <summary>
+        /// Adds a new sales record to the database
+        /// </summary>
+        /// <param name="prodId">Product ID</param>
+        /// <param name="quan">Quantity purchased</param>
+        /// <returns></returns>
+        static public void AddNewProduct(ProductRecord newProduct)
+        {
+            // New connection object
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+
+            try
+            {
+                // Opens database connection
+                cnn.Open();
+
+                // Add sale to Sales table
+                string stm = "INSERT INTO Products (Name, Description, Price, Category) VALUES ('" + newProduct.Name + "', '"+newProduct.Description+"', "+newProduct.Price+ ", '"+newProduct.Category+"');";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                if (cnn != null)
+                {
+                    cnn.Close();
+                }
+            }
+        }
+
     }
 }
