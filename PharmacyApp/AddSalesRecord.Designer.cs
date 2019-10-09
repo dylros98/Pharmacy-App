@@ -80,6 +80,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(206)))), ((int)(((byte)(211)))));
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnSave.Location = new System.Drawing.Point(499, 204);
             this.btnSave.Name = "btnSave";
@@ -103,9 +104,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(206)))), ((int)(((byte)(211)))));
-            this.panel2.Location = new System.Drawing.Point(0, -6);
+            this.panel2.Location = new System.Drawing.Point(-8, -6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(41, 280);
+            this.panel2.Size = new System.Drawing.Size(49, 280);
             this.panel2.TabIndex = 3;
             // 
             // Add_EditSalesRecord

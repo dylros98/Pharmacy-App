@@ -14,12 +14,10 @@ namespace PharmacyApp
     {
 
         private int rowIndex = 1;
-        private SalesReportGenerator List;
         private int selectedRow = 0;
 
         public Database()
         {
-            List = new SalesReportGenerator();
             InitializeComponent();
         }
 
@@ -32,20 +30,6 @@ namespace PharmacyApp
                     addNewRecord();
                 }
             }
-        }
-
-        private void BtnWeeklyReport_Click(object sender, EventArgs e)
-        {
-            Report weeklyReport = new Report(List.ReportList(false));
-            weeklyReport.setTitleText("Weekly Sales Report");
-            weeklyReport.Show();
-        }
-
-        private void BtnMonthlyReport_Click(object sender, EventArgs e)
-        {
-            Report monthlyReport = new Report(List.ReportList(true));
-            monthlyReport.setTitleText("Monthly Sales Report");
-            monthlyReport.Show();
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -107,7 +91,7 @@ namespace PharmacyApp
         {
             if(selectedRow == 0)
             {
-                MessageBox.Show("Please select a Sales Record to edit first.");
+                MessageBox.Show("Please select a sales record to edit first.");
             }
             else
             {
@@ -123,9 +107,15 @@ namespace PharmacyApp
                         tlpDataRecords.GetControlFromPosition(1, selectedRow).Text = pRecord.Name;
                         tlpDataRecords.GetControlFromPosition(2, selectedRow).Text = saleData.DateSold.ToString();
                         tlpDataRecords.GetControlFromPosition(3, selectedRow).Text = saleData.Quantity.ToString();
+                        tlpDataRecords.GetControlFromPosition(4, selectedRow).Text = "$" + (pRecord.Price * saleData.Quantity).ToString();
                     }
                 }
             }
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

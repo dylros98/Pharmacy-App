@@ -19,14 +19,42 @@ namespace PharmacyApp
 
         private void BtnViewDatabase_Click(object sender, EventArgs e)
         {
-            Database databaseForm = new Database();
-            databaseForm.Show();
+            using (Database databaseForm = new Database())
+            {
+                this.Hide();
+                databaseForm.FormClosed += new FormClosedEventHandler(DatabaseForm_FormClosed);
+                
+                if (databaseForm.ShowDialog() == DialogResult.Cancel)
+                {
+                    databaseForm.Close();
+                    this.Show();
+                }
+            }
+        }
+
+        void DatabaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
 
         private void BtnGenerateReports_Click(object sender, EventArgs e)
         {
-            DateSelection dateForm = new DateSelection();
-            dateForm.Show();
+            using (DateSelection dateForm = new DateSelection())
+            {
+                this.Hide();
+                dateForm.FormClosed += new FormClosedEventHandler(DateForm_FormClosed);
+
+                if (dateForm.ShowDialog() == DialogResult.Cancel)
+                {
+                    dateForm.Close();
+                    this.Show();
+                }
+            }
+        }
+
+        void DateForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }
