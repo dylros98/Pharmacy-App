@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tlpDataRecords = new System.Windows.Forms.TableLayoutPanel();
             this.lbl = new System.Windows.Forms.Label();
@@ -171,6 +172,9 @@
             this.ClientSize = new System.Drawing.Size(931, 541);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.WeeklyReport_Load);

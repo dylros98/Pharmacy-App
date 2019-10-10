@@ -590,5 +590,61 @@ namespace PharmacyApp
             }
         }
 
+        /// <summary>
+        /// Gets the most recently added sales record
+        /// </summary>
+        /// <returns>The sales record</returns>
+        static public ProductRecord GetNewestProduct()
+        {
+            ProductRecord productRecord = new ProductRecord();
+
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlDataReader rdr = null;
+
+            try
+            {
+                cnn.Open();
+                string stm = "SELECT * FROM Products WHERE ProductID = (SELECT MAX(ProductID) FROM Products)";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                rdr = cmd.ExecuteReader();
+
+                if (!rdr.HasRows)
+                {
+                    throw new Exception("No sales records found!");
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        productRecord.ProductID = rdr.GetInt32(0);
+                        productRecord.Name = rdr.GetString(1);
+                        productRecord.Description = rdr.GetString(2);
+                        productRecord.Price = rdr.GetDouble(3);
+                        productRecord.Category = rdr.GetString(4);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                if (cnn != null)
+                {
+                    cnn.Close();
+                }
+            }
+            return productRecord;
+        }
     }
+
+
 }

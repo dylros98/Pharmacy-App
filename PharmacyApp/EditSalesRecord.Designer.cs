@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSalesRecord));
             this.btnSave = new System.Windows.Forms.Button();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtProductID = new System.Windows.Forms.TextBox();
@@ -146,8 +147,10 @@
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtProductID);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditSalesRecord";
-            this.Text = "EditSalesRecord";
+            this.Text = "Edit Sales Record";
             this.Load += new System.EventHandler(this.EditSalesRecord_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
