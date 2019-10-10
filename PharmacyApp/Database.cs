@@ -118,12 +118,6 @@ namespace PharmacyApp
 
         }
 
-        private void addNewProduct_Click(object sender, EventArgs e)
-        {
-            using (AddNewProduct addNewProduct = new AddNewProduct())
-            {
-                addNewProduct.ShowDialog();
-            }
-        }
+        
     }
 }

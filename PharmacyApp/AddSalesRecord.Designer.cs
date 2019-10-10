@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_EditSalesRecord));
             this.lblProductID = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.txtProductID = new System.Windows.Forms.TextBox();
@@ -121,8 +122,10 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtProductID);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Add_EditSalesRecord";
-            this.Text = "Add_EditSalesRecord";
+            this.Text = "New Sales Record";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

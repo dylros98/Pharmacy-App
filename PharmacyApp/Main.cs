@@ -56,5 +56,20 @@ namespace PharmacyApp
         {
             this.Show();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            using (Products productForm = new Products())
+            {
+                this.Hide();
+                productForm.FormClosed += new FormClosedEventHandler(DateForm_FormClosed);
+
+                if (productForm.ShowDialog() == DialogResult.Cancel)
+                {
+                    productForm.Close();
+                    this.Show();
+                }
+            }
+        }
     }
 }
