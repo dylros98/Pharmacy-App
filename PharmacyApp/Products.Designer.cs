@@ -192,7 +192,7 @@
             this.addNewProduct.Margin = new System.Windows.Forms.Padding(2);
             this.addNewProduct.Name = "addNewProduct";
             this.addNewProduct.Size = new System.Drawing.Size(86, 52);
-            this.addNewProduct.TabIndex = 12;
+            this.addNewProduct.TabIndex = 0;
             this.addNewProduct.Text = "Add Product";
             this.addNewProduct.UseVisualStyleBackColor = false;
             this.addNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
@@ -207,7 +207,7 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(86, 52);
-            this.btnBack.TabIndex = 11;
+            this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
             // 

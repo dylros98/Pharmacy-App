@@ -71,8 +71,7 @@
             this.txtProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(249, 27);
-            this.txtProductID.TabIndex = 4;
-            this.txtProductID.TextChanged += new System.EventHandler(this.txtProductID_TextChanged);
+            this.txtProductID.TabIndex = 0;
             // 
             // txtQuantity
             // 
@@ -82,7 +81,8 @@
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(249, 27);
-            this.txtQuantity.TabIndex = 6;
+            this.txtQuantity.TabIndex = 1;
+
             // 
             // btnSave
             // 
@@ -94,7 +94,8 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(68, 33);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 2;
+
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -122,6 +123,7 @@
             // 
             // Add_EditSalesRecord
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));

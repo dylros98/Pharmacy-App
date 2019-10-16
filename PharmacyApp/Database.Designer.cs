@@ -149,7 +149,7 @@
             this.btnAddRecord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddRecord.Name = "btnAddRecord";
             this.btnAddRecord.Size = new System.Drawing.Size(86, 52);
-            this.btnAddRecord.TabIndex = 1;
+            this.btnAddRecord.TabIndex = 0;
             this.btnAddRecord.Text = "Add Record";
             this.btnAddRecord.UseVisualStyleBackColor = false;
             this.btnAddRecord.Click += new System.EventHandler(this.BtnAddRecord_Click);
@@ -163,7 +163,7 @@
             this.btnEditRecord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditRecord.Name = "btnEditRecord";
             this.btnEditRecord.Size = new System.Drawing.Size(86, 52);
-            this.btnEditRecord.TabIndex = 2;
+            this.btnEditRecord.TabIndex = 1;
             this.btnEditRecord.Text = "Edit Record";
             this.btnEditRecord.UseVisualStyleBackColor = false;
             this.btnEditRecord.Click += new System.EventHandler(this.BtnEditRecord_Click);
@@ -220,10 +220,9 @@
             this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(86, 52);
-            this.btnBack.TabIndex = 5;
+            this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // Database
             // 

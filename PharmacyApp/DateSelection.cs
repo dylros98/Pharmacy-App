@@ -33,5 +33,10 @@ namespace PharmacyApp
             monthlyReport.setTitleText("Monthly Sales Report");
             monthlyReport.Show();
         }
+
+        private void BtnGenerateReport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
