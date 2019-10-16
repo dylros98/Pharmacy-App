@@ -29,9 +29,9 @@ INSERT INTO Categories (Name) VALUES ('Medicine');
 INSERT INTO Categories (Name) VALUES ('Confectionary');
 INSERT INTO Categories (Name) VALUES ('Toiletries');
 
-INSERT INTO Products (Name, Description, Price, Category) VALUES ('Pills', 'Capsule of Pills', 5.00, 1);
-INSERT INTO Products (Name, Description, Price, Category) VALUES ('Jellybeans', 'Bag of Jellybeans', 10.50, 2);
-INSERT INTO Products (Name, Description, Price, Category) VALUES ('Hand Wash', 'Bottle of Hand Wash', 15.00, 3);
+INSERT INTO Products (Name, Description, Price, CategoryID) VALUES ('Pills', 'Capsule of Pills', 5.00, 1);
+INSERT INTO Products (Name, Description, Price, CategoryID) VALUES ('Jellybeans', 'Bag of Jellybeans', 10.50, 2);
+INSERT INTO Products (Name, Description, Price, CategoryID) VALUES ('Hand Wash', 'Bottle of Hand Wash', 15.00, 3);
 
 INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (1, CURRENT_DATE(), 1);
 INSERT INTO Sales (ProductID, DateSold, Quantity) VALUES (2, '20190501', 2);
