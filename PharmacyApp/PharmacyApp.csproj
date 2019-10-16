@@ -98,8 +98,6 @@
       <DependentUpon>Database.cs</DependentUpon>
     </Compile>
     <Compile Include="GUIFunctions.cs" />
-     <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ItemSalesPrediction.cs">
       <SubType>Form</SubType>
     </Compile>
