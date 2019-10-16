@@ -644,6 +644,80 @@ namespace PharmacyApp
             }
             return productRecord;
         }
+
+        /// <summary>
+        /// Gets the most recently added sales record
+        /// </summary>
+        /// <returns>The sales record</returns>
+        static public double? PredictProductSales(int productID, string type)
+        {
+            MySqlConnection cnn = new MySqlConnection(connectionString);
+            MySqlConnection cnn2 = new MySqlConnection(connectionString);
+            MySqlDataReader rdr = null;
+
+            int totalSales = 0, productSales = 0;
+            double? productPercentage = 0;
+
+            try
+            {
+                cnn.Open();
+                string stm = "SELECT Quantity FROM Sales WHERE DateSold BETWEEN CURDATE()-INTERVAL 1 "+type+" AND CURDATE()";
+                MySqlCommand cmd = new MySqlCommand(stm, cnn);
+                rdr = cmd.ExecuteReader();
+
+                if (!rdr.HasRows)
+                {
+                    throw new Exception("No sales records found!");
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        totalSales += rdr.GetInt32(0);
+                    }
+                }
+
+                cnn.Close();
+                cnn2.Open();
+
+                stm = "SELECT Quantity FROM Sales WHERE ProductID = " + productID +" AND DateSold BETWEEN CURDATE()-INTERVAL 1 "+type+" AND CURDATE()";
+                cmd = new MySqlCommand(stm, cnn2);
+                rdr = cmd.ExecuteReader();
+
+                if(!rdr.HasRows)
+                {
+                    throw new Exception("No sales records found!");
+                }
+                else
+                {
+                    while (rdr.Read())
+                    {
+                        productSales += rdr.GetInt32(0);
+                    }
+                }
+
+                productPercentage = Math.Round((Convert.ToDouble(productSales)/Convert.ToDouble(totalSales)),2);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+
+                if (cnn2 != null)
+                {
+                    cnn2.Close();
+                }
+            }
+            return productPercentage;
+        }
     }
 
 
