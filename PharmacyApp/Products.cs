@@ -63,6 +63,38 @@ namespace PharmacyApp
             // Used for data retrieval for editing sales records
             selectedRow = row;
         }
+        public void addNewProductRecord()
+        {
+            ProductRecord record = DatabaseContext.GetNewestProduct();
+
+            tlpDataRecords.Controls.Add(new Label() { Text = record.ProductID.ToString() }, 0, rowIndex);
+            tlpDataRecords.Controls.Add(new Label() { Text = record.Name }, 1, rowIndex);
+            tlpDataRecords.Controls.Add(new Label() { Text = record.Description }, 2, rowIndex);
+            tlpDataRecords.Controls.Add(new Label() { Text = "$" + record.Price.ToString() }, 3, rowIndex);
+            tlpDataRecords.Controls.Add(new Label() { Text = record.Category }, 4, rowIndex);
+            rowIndex++;
+        }
+
+        private void weeklyPredButton_Click(object sender, EventArgs e)
+        {
+            using (ItemSalesPrediction weeklySalesPredic = new ItemSalesPrediction("WEEK"))
+            {
+                weeklySalesPredic.ShowDialog();
+            }
+        }
+
+        private void monthlyPredButton_Click(object sender, EventArgs e)
+        {
+            using (ItemSalesPrediction monthlySalesPredic = new ItemSalesPrediction("MONTH"))
+            {
+                monthlySalesPredic.ShowDialog();
+            }
+        }
+
+        private void tlpDataRecords_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
