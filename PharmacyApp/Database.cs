@@ -118,6 +118,9 @@ namespace PharmacyApp
 
         }
 
-        
+        private void tlpDataRecords_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
