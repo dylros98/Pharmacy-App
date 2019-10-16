@@ -49,9 +49,10 @@
             this.panel1.Controls.Add(this.tlpDataRecords);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(12, 101);
+            this.panel1.Location = new System.Drawing.Point(8, 66);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(907, 428);
+            this.panel1.Size = new System.Drawing.Size(605, 278);
             this.panel1.TabIndex = 1;
             // 
             // tlpDataRecords
@@ -71,13 +72,14 @@
             this.tlpDataRecords.Controls.Add(this.lblTotal, 4, 0);
             this.tlpDataRecords.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDataRecords.ForeColor = System.Drawing.Color.White;
-            this.tlpDataRecords.Location = new System.Drawing.Point(0, 3);
+            this.tlpDataRecords.Location = new System.Drawing.Point(0, 2);
+            this.tlpDataRecords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tlpDataRecords.Name = "tlpDataRecords";
-            this.tlpDataRecords.Padding = new System.Windows.Forms.Padding(5);
+            this.tlpDataRecords.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.tlpDataRecords.RowCount = 2;
-            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDataRecords.Size = new System.Drawing.Size(907, 422);
+            this.tlpDataRecords.Size = new System.Drawing.Size(605, 274);
             this.tlpDataRecords.TabIndex = 0;
             // 
             // lbl
@@ -85,9 +87,10 @@
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(188, 6);
+            this.lbl.Location = new System.Drawing.Point(125, 4);
+            this.lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(99, 34);
+            this.lbl.Size = new System.Drawing.Size(66, 22);
             this.lbl.TabIndex = 6;
             this.lbl.Text = "Name";
             // 
@@ -96,9 +99,10 @@
             this.lblProductID.AutoSize = true;
             this.lblProductID.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblProductID.ForeColor = System.Drawing.Color.White;
-            this.lblProductID.Location = new System.Drawing.Point(9, 6);
+            this.lblProductID.Location = new System.Drawing.Point(6, 4);
+            this.lblProductID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(157, 34);
+            this.lblProductID.Size = new System.Drawing.Size(107, 22);
             this.lblProductID.TabIndex = 1;
             this.lblProductID.Text = "Product ID";
             // 
@@ -107,9 +111,10 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(546, 6);
+            this.lblPrice.Location = new System.Drawing.Point(363, 4);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(83, 34);
+            this.lblPrice.Size = new System.Drawing.Size(54, 22);
             this.lblPrice.TabIndex = 4;
             this.lblPrice.Text = "Price";
             // 
@@ -118,9 +123,10 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(367, 6);
+            this.lblQuantity.Location = new System.Drawing.Point(244, 4);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(134, 34);
+            this.lblQuantity.Size = new System.Drawing.Size(92, 22);
             this.lblQuantity.TabIndex = 3;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -129,9 +135,10 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(725, 6);
+            this.lblTotal.Location = new System.Drawing.Point(482, 4);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(79, 34);
+            this.lblTotal.Size = new System.Drawing.Size(53, 22);
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "Total";
             // 
@@ -140,9 +147,10 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 16F);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(14, 22);
+            this.lblTitle.Location = new System.Drawing.Point(9, 14);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(326, 39);
+            this.lblTitle.Size = new System.Drawing.Size(231, 25);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Weekly Sales Report";
             // 
@@ -151,30 +159,33 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(179)))), ((int)(((byte)(209)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Location = new System.Drawing.Point(-2, -2);
+            this.panel2.Location = new System.Drawing.Point(-1, -1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(938, 88);
+            this.panel2.Size = new System.Drawing.Size(625, 57);
             this.panel2.TabIndex = 5;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(181)))), ((int)(((byte)(191)))));
-            this.panel3.Location = new System.Drawing.Point(-1, 68);
+            this.panel3.Location = new System.Drawing.Point(-1, 44);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(936, 20);
+            this.panel3.Size = new System.Drawing.Size(624, 13);
             this.panel3.TabIndex = 5;
             // 
             // Report
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(931, 541);
+            this.ClientSize = new System.Drawing.Size(621, 352);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.WeeklyReport_Load);

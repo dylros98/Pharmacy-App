@@ -97,6 +97,7 @@
     <Compile Include="Database.Designer.cs">
       <DependentUpon>Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIFunctions.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

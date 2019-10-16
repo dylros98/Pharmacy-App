@@ -26,7 +26,8 @@ namespace PharmacyApp
             {
                 if (addNewProduct.ShowDialog() == DialogResult.OK)
                 {
-                    addNewProductRecord();
+                    GUIFunctions.addNewProductRecord(tlpDataRecords, rowIndex);
+                    rowIndex++;
                 }
             }
         }
@@ -36,12 +37,7 @@ namespace PharmacyApp
             List<ProductRecord> allProducts = DatabaseContext.GenerateAllProduct();
             foreach (ProductRecord p in allProducts)
             {
-
-                tlpDataRecords.Controls.Add(new Label() { Text = p.ProductID.ToString() }, 0, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = p.Name }, 1, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = p.Description }, 2, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = "$" + p.Price.ToString() }, 3, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = p.Category }, 4, rowIndex);
+                GUIFunctions.addNewProductRecord(tlpDataRecords, rowIndex, p);
                 rowIndex++;
             }
 
@@ -62,26 +58,10 @@ namespace PharmacyApp
 
             if (row != 0)
             {
-                tlpDataRecords.GetControlFromPosition(0, row).BackColor = Color.FromArgb(134, 179, 209);
-                tlpDataRecords.GetControlFromPosition(1, row).BackColor = Color.FromArgb(134, 179, 209);
-                tlpDataRecords.GetControlFromPosition(2, row).BackColor = Color.FromArgb(134, 179, 209);
-                tlpDataRecords.GetControlFromPosition(3, row).BackColor = Color.FromArgb(134, 179, 209);
-                tlpDataRecords.GetControlFromPosition(4, row).BackColor = Color.FromArgb(134, 179, 209);
+                GUIFunctions.setRowBackground(tlpDataRecords, row, Color.FromArgb(134, 179, 209));
             }
             // Used for data retrieval for editing sales records
             selectedRow = row;
-        }
-
-        public void addNewProductRecord()
-        {
-            ProductRecord record = DatabaseContext.GetNewestProduct();
-
-            tlpDataRecords.Controls.Add(new Label() { Text = record.ProductID.ToString() }, 0, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = record.Name }, 1, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = record.Description }, 2, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = "$" + record.Price.ToString() }, 3, rowIndex);
-            tlpDataRecords.Controls.Add(new Label() { Text = record.Category }, 4, rowIndex);
-            rowIndex++;
         }
     }
 }

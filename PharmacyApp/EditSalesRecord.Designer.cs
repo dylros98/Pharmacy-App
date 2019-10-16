@@ -47,10 +47,11 @@
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(526, 221);
+            this.btnSave.Location = new System.Drawing.Point(351, 144);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(101, 44);
-            this.btnSave.TabIndex = 15;
+            this.btnSave.Size = new System.Drawing.Size(67, 29);
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -59,28 +60,31 @@
             // 
             this.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(230, 164);
+            this.txtQuantity.Location = new System.Drawing.Point(153, 107);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(397, 37);
-            this.txtQuantity.TabIndex = 13;
+            this.txtQuantity.Size = new System.Drawing.Size(265, 27);
+            this.txtQuantity.TabIndex = 2;
             // 
             // txtProductID
             // 
             this.txtProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProductID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductID.Location = new System.Drawing.Point(230, 41);
+            this.txtProductID.Location = new System.Drawing.Point(153, 27);
+            this.txtProductID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtProductID.Name = "txtProductID";
-            this.txtProductID.Size = new System.Drawing.Size(397, 37);
-            this.txtProductID.TabIndex = 12;
+            this.txtProductID.Size = new System.Drawing.Size(265, 27);
+            this.txtProductID.TabIndex = 0;
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(67, 171);
+            this.lblQuantity.Location = new System.Drawing.Point(45, 111);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(115, 30);
+            this.lblQuantity.Size = new System.Drawing.Size(80, 21);
             this.lblQuantity.TabIndex = 11;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -89,9 +93,10 @@
             this.lblProductID.AutoSize = true;
             this.lblProductID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductID.ForeColor = System.Drawing.Color.White;
-            this.lblProductID.Location = new System.Drawing.Point(67, 44);
+            this.lblProductID.Location = new System.Drawing.Point(45, 29);
+            this.lblProductID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductID.Name = "lblProductID";
-            this.lblProductID.Size = new System.Drawing.Size(136, 30);
+            this.lblProductID.Size = new System.Drawing.Size(93, 21);
             this.lblProductID.TabIndex = 10;
             this.lblProductID.Text = "Product ID";
             // 
@@ -99,19 +104,21 @@
             // 
             this.txtDateSold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDateSold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDateSold.Location = new System.Drawing.Point(230, 104);
+            this.txtDateSold.Location = new System.Drawing.Point(153, 68);
+            this.txtDateSold.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtDateSold.Name = "txtDateSold";
-            this.txtDateSold.Size = new System.Drawing.Size(397, 37);
-            this.txtDateSold.TabIndex = 17;
+            this.txtDateSold.Size = new System.Drawing.Size(265, 27);
+            this.txtDateSold.TabIndex = 1;
             // 
             // lblDateSold
             // 
             this.lblDateSold.AutoSize = true;
             this.lblDateSold.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDateSold.ForeColor = System.Drawing.Color.White;
-            this.lblDateSold.Location = new System.Drawing.Point(67, 107);
+            this.lblDateSold.Location = new System.Drawing.Point(45, 70);
+            this.lblDateSold.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDateSold.Name = "lblDateSold";
-            this.lblDateSold.Size = new System.Drawing.Size(128, 30);
+            this.lblDateSold.Size = new System.Drawing.Size(86, 21);
             this.lblDateSold.TabIndex = 16;
             this.lblDateSold.Text = "Date Sold";
             // 
@@ -123,24 +130,27 @@
             this.panel1.Controls.Add(this.lblDateSold);
             this.panel1.Controls.Add(this.lblQuantity);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 277);
+            this.panel1.Size = new System.Drawing.Size(141, 180);
             this.panel1.TabIndex = 18;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(206)))), ((int)(((byte)(211)))));
-            this.panel2.Location = new System.Drawing.Point(-13, -6);
+            this.panel2.Location = new System.Drawing.Point(-9, -4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(54, 308);
+            this.panel2.Size = new System.Drawing.Size(36, 200);
             this.panel2.TabIndex = 3;
             // 
             // EditSalesRecord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.btnSave;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(640, 277);
+            this.ClientSize = new System.Drawing.Size(426, 178);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtDateSold);
             this.Controls.Add(this.btnSave);
@@ -149,6 +159,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditSalesRecord";
             this.Text = "Edit Sales Record";
             this.Load += new System.EventHandler(this.EditSalesRecord_Load);
