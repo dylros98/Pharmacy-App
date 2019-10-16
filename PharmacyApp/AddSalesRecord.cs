@@ -33,5 +33,10 @@ namespace PharmacyApp
 
             Close();
         }
+
+        private void txtProductID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
