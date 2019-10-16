@@ -82,7 +82,6 @@
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpDataRecords.Size = new System.Drawing.Size(521, 343);
             this.tlpDataRecords.TabIndex = 0;
-            this.tlpDataRecords.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpDataRecords_Paint);
             // 
             // lblSaleID
             // 
