@@ -41,7 +41,7 @@ namespace PharmacyApp
             int quan = Int32.Parse(txtQuantity.Text);
             string dt = txtDateSold.Text;
 
-            DatabaseContext.EditSalesRecord(saleId, prodId, quan, dt);
+            SalesDatabase.EditSalesRecord(saleId, prodId, quan, dt);
 
             Close();
         }

@@ -30,7 +30,7 @@ namespace PharmacyApp
         {
             int prodId = Int32.Parse(txtProductID.Text);
             
-            double? percentage = DatabaseContext.PredictProductSales(prodId, type)*100;
+            double? percentage = Prediction.PredictProductSales(prodId, type)*100;
 
             txtProductID.Hide();
             lblProductID.Hide();

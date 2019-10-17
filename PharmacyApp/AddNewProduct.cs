@@ -26,7 +26,7 @@ namespace PharmacyApp
                 Category = txtCategory.Text
             };
              
-            DatabaseContext.AddNewProduct(newProductRecord);
+            ProductDatabase.AddNewProduct(newProductRecord);
 
             Close();
         }

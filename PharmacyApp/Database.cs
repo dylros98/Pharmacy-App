@@ -34,7 +34,7 @@ namespace PharmacyApp
 
         private void Main_Load(object sender, EventArgs e)
         {
-            List<SalesRecord> allSales = DatabaseContext.GetAllSales();
+            List<SalesRecord> allSales = SalesDatabase.GetAllSales();
             foreach (SalesRecord s in allSales)
             {
                 GUIFunctions.addNewRecord(tlpDataRecords, rowIndex, s);
@@ -63,7 +63,7 @@ namespace PharmacyApp
             // Used for data retrieval for editing sales records
             selectedRow = row;
         }
-
+        
         private void BtnEditRecord_Click(object sender, EventArgs e)
         {
             if (selectedRow == 0)
@@ -74,7 +74,7 @@ namespace PharmacyApp
             {
                 using (EditSalesRecord editRecord = new EditSalesRecord())
                 {
-                    SalesRecord saleData = DatabaseContext.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
+                    SalesRecord saleData = SalesDatabase.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
                     editRecord.SaleRecord = saleData;
 
                     if (editRecord.ShowDialog() == DialogResult.OK)
