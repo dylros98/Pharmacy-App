@@ -25,10 +25,10 @@ namespace PharmacyApp
         static public void addNewRecord(TableLayoutPanel table, int rowIndex)
         {
             // Gets latest sale record from the database
-            SalesRecord record = DatabaseContext.GetNewestSalesRecord();
+            SalesRecord record = SalesDatabase.GetNewestSalesRecord();
 
             // Finds the corresponding Product Record for the SalesRecord
-            ProductRecord pRecord = DatabaseContext.GetProductByProductID(record.ProductID);
+            ProductRecord pRecord = ProductDatabase.GetProductByProductID(record.ProductID);
 
             // Creates a new row in the table and updates the text in the cells
             table.Controls.Add(new Label() { Text = record.SaleID.ToString() }, 0, rowIndex);
@@ -47,7 +47,7 @@ namespace PharmacyApp
         static public void addNewRecord(TableLayoutPanel table, int rowIndex, SalesRecord salesRecord)
         {
             // Finds the corresponding Product Record for the SalesRecord
-            ProductRecord pRecord = DatabaseContext.GetProductByProductID(salesRecord.ProductID);
+            ProductRecord pRecord = ProductDatabase.GetProductByProductID(salesRecord.ProductID);
 
             // Creates a new row in the table and updates the text in the cells
             table.Controls.Add(new Label() { Text = salesRecord.SaleID.ToString() }, 0, rowIndex);
@@ -66,7 +66,7 @@ namespace PharmacyApp
         static public void addNewProductRecord(TableLayoutPanel table, int rowIndex)
         {
             // Getting the new Product Record
-            ProductRecord record = DatabaseContext.GetNewestProduct();
+            ProductRecord record = ProductDatabase.GetNewestProduct();
 
             // Creates a new row in the table and updates the text in the cells
             table.Controls.Add(new Label() { Text = record.ProductID.ToString() }, 0, rowIndex);
