@@ -25,11 +25,7 @@ namespace PharmacyApp
         {
            foreach (SalesReport s in reportList)
             {
-                tlpDataRecords.Controls.Add(new Label() { Text = s.ProductID.ToString() }, 0, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Name.ToString() }, 1, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Quantity.ToString() }, 2, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Price.ToString() }, 3, rowIndex);
-                tlpDataRecords.Controls.Add(new Label() { Text = s.Total.ToString() }, 4, rowIndex);
+                GUIFunctions.addNewReportRecord(tlpDataRecords, rowIndex, s);
                 rowIndex++;
             }
         }

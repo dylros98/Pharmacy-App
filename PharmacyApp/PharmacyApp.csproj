@@ -103,6 +103,7 @@
     <Compile Include="Database.Designer.cs">
       <DependentUpon>Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIFunctions.cs" />
     <Compile Include="ItemSalesPrediction.cs">
       <SubType>Form</SubType>
     </Compile>

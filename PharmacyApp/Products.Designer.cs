@@ -55,7 +55,7 @@
             this.panel1.Location = new System.Drawing.Point(15, 68);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 343);
+            this.panel1.Size = new System.Drawing.Size(659, 343);
             this.panel1.TabIndex = 7;
             // 
             // tlpDataRecords
@@ -81,7 +81,7 @@
             this.tlpDataRecords.RowCount = 2;
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tlpDataRecords.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpDataRecords.Size = new System.Drawing.Size(702, 343);
+            this.tlpDataRecords.Size = new System.Drawing.Size(658, 343);
             this.tlpDataRecords.TabIndex = 0;
             this.tlpDataRecords.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpDataRecords_Paint);
             // 
@@ -100,7 +100,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(143, 1);
+            this.lblName.Location = new System.Drawing.Point(134, 1);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(66, 22);
@@ -111,7 +111,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(283, 1);
+            this.lblDescription.Location = new System.Drawing.Point(265, 1);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(111, 22);
@@ -122,7 +122,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(423, 1);
+            this.lblPrice.Location = new System.Drawing.Point(396, 1);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(54, 22);
@@ -133,7 +133,7 @@
             // 
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(563, 1);
+            this.lblCategory.Location = new System.Drawing.Point(527, 1);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(99, 22);
@@ -188,11 +188,11 @@
             this.addNewProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewProduct.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewProduct.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.addNewProduct.Location = new System.Drawing.Point(729, 96);
+            this.addNewProduct.Location = new System.Drawing.Point(684, 96);
             this.addNewProduct.Margin = new System.Windows.Forms.Padding(2);
             this.addNewProduct.Name = "addNewProduct";
-            this.addNewProduct.Size = new System.Drawing.Size(86, 52);
-            this.addNewProduct.TabIndex = 12;
+            this.addNewProduct.Size = new System.Drawing.Size(99, 52);
+            this.addNewProduct.TabIndex = 0;
             this.addNewProduct.Text = "Add Product";
             this.addNewProduct.UseVisualStyleBackColor = false;
             this.addNewProduct.Click += new System.EventHandler(this.AddNewProduct_Click);
@@ -203,11 +203,11 @@
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(729, 359);
+            this.btnBack.Location = new System.Drawing.Point(697, 359);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(86, 52);
-            this.btnBack.TabIndex = 11;
+            this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
             // 
@@ -215,13 +215,13 @@
             // 
             this.weeklyPredButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(206)))), ((int)(((byte)(211)))));
             this.weeklyPredButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.weeklyPredButton.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.weeklyPredButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.weeklyPredButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.weeklyPredButton.Location = new System.Drawing.Point(729, 163);
+            this.weeklyPredButton.Location = new System.Drawing.Point(684, 163);
             this.weeklyPredButton.Margin = new System.Windows.Forms.Padding(2);
             this.weeklyPredButton.Name = "weeklyPredButton";
-            this.weeklyPredButton.Size = new System.Drawing.Size(86, 52);
-            this.weeklyPredButton.TabIndex = 13;
+            this.weeklyPredButton.Size = new System.Drawing.Size(99, 52);
+            this.weeklyPredButton.TabIndex = 1;
             this.weeklyPredButton.Text = "Weekly Prediction";
             this.weeklyPredButton.UseVisualStyleBackColor = false;
             this.weeklyPredButton.Click += new System.EventHandler(this.weeklyPredButton_Click);
@@ -230,13 +230,13 @@
             // 
             this.monthlyPredButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(206)))), ((int)(((byte)(211)))));
             this.monthlyPredButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.monthlyPredButton.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.monthlyPredButton.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.monthlyPredButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.monthlyPredButton.Location = new System.Drawing.Point(729, 229);
+            this.monthlyPredButton.Location = new System.Drawing.Point(684, 229);
             this.monthlyPredButton.Margin = new System.Windows.Forms.Padding(2);
             this.monthlyPredButton.Name = "monthlyPredButton";
-            this.monthlyPredButton.Size = new System.Drawing.Size(86, 52);
-            this.monthlyPredButton.TabIndex = 14;
+            this.monthlyPredButton.Size = new System.Drawing.Size(99, 52);
+            this.monthlyPredButton.TabIndex = 2;
             this.monthlyPredButton.Text = "Monthly Prediction";
             this.monthlyPredButton.UseVisualStyleBackColor = false;
             this.monthlyPredButton.Click += new System.EventHandler(this.monthlyPredButton_Click);
@@ -246,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.ClientSize = new System.Drawing.Size(827, 424);
+            this.ClientSize = new System.Drawing.Size(794, 424);
             this.Controls.Add(this.monthlyPredButton);
             this.Controls.Add(this.weeklyPredButton);
             this.Controls.Add(this.panel1);

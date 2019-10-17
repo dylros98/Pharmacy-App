@@ -16,22 +16,6 @@ namespace PharmacyApp
         {
             InitializeComponent();
         }
-
-        private void lblQuantity_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             ProductRecord newProductRecord = new ProductRecord()
@@ -45,11 +29,6 @@ namespace PharmacyApp
             ProductDatabase.AddNewProduct(newProductRecord);
 
             Close();
-        }
-
-        private void lblProductID_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
