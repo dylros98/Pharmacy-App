@@ -34,10 +34,10 @@ namespace PharmacyApp
 
         private void Main_Load(object sender, EventArgs e)
         {
-            List<SalesRecord> allSales = DatabaseContext.GetAllSales();
+            List<SalesRecord> allSales = SalesDatabase.GetAllSales();
             foreach (SalesRecord s in allSales)
             {
-                ProductRecord p = DatabaseContext.GetProductByProductID(s.ProductID);
+                ProductRecord p = ProductDatabase.GetProductByProductID(s.ProductID);
 
                 tlpDataRecords.Controls.Add(new Label() { Text = s.SaleID.ToString() }, 0, rowIndex);
                 tlpDataRecords.Controls.Add(new Label() { Text = p.Name.ToString() }, 1, rowIndex);
@@ -76,8 +76,8 @@ namespace PharmacyApp
 
         public void addNewRecord()
         {
-            SalesRecord record = DatabaseContext.GetNewestSalesRecord();
-            ProductRecord pRecord = DatabaseContext.GetProductByProductID(record.ProductID);
+            SalesRecord record = SalesDatabase.GetNewestSalesRecord();
+            ProductRecord pRecord = ProductDatabase.GetProductByProductID(record.ProductID);
 
             tlpDataRecords.Controls.Add(new Label() { Text = record.SaleID.ToString() }, 0, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = pRecord.Name.ToString() }, 1, rowIndex);
@@ -97,13 +97,13 @@ namespace PharmacyApp
             {
                 using (EditSalesRecord editRecord = new EditSalesRecord())
                 {
-                    SalesRecord saleData = DatabaseContext.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
+                    SalesRecord saleData = SalesDatabase.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
                     editRecord.SaleRecord = saleData;
 
                     if (editRecord.ShowDialog() == DialogResult.OK)
                     {
-                        saleData = DatabaseContext.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
-                        ProductRecord pRecord = DatabaseContext.GetProductByProductID(saleData.ProductID);
+                        saleData = SalesDatabase.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
+                        ProductRecord pRecord = ProductDatabase.GetProductByProductID(saleData.ProductID);
                         tlpDataRecords.GetControlFromPosition(1, selectedRow).Text = pRecord.Name;
                         tlpDataRecords.GetControlFromPosition(2, selectedRow).Text = saleData.DateSold.ToString();
                         tlpDataRecords.GetControlFromPosition(3, selectedRow).Text = saleData.Quantity.ToString();

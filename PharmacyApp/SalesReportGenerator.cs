@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace PharmacyApp
 {
-
     class SalesReportGenerator
     {
         public List<SalesReport> ReportList(bool monthly)
         {
-            List<ProductRecord> products = DatabaseContext.GenerateAllProduct();
+            List<ProductRecord> products = ProductDatabase.GenerateAllProduct();
             List<SalesReport> report = new List<SalesReport>();
 
             foreach (ProductRecord record in products)
@@ -20,14 +19,12 @@ namespace PharmacyApp
                 {
                     ProductID = record.ProductID,
                     Name = record.Name,
-                    Quantity = DatabaseContext.GenerateSalesAmount(record.ProductID, monthly),
+                    Quantity = SalesDatabase.GenerateSalesAmount(record.ProductID, monthly),
                     Price = record.Price,
-                    Total = Convert.ToDouble(DatabaseContext.GenerateSalesAmount(record.ProductID, monthly)) * record.Price
+                    Total = Convert.ToDouble(SalesDatabase.GenerateSalesAmount(record.ProductID, monthly)) * record.Price
                 });
             }
-
             return report;
-
         }
     }
 }

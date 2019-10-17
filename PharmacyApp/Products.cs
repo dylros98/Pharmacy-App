@@ -33,7 +33,7 @@ namespace PharmacyApp
 
         private void Products_Load(object sender, EventArgs e)
         {
-            List<ProductRecord> allProducts = DatabaseContext.GenerateAllProduct();
+            List<ProductRecord> allProducts = ProductDatabase.GenerateAllProduct();
             foreach (ProductRecord p in allProducts)
             {
 
@@ -74,7 +74,7 @@ namespace PharmacyApp
 
         public void addNewProductRecord()
         {
-            ProductRecord record = DatabaseContext.GetNewestProduct();
+            ProductRecord record = ProductDatabase.GetNewestProduct();
 
             tlpDataRecords.Controls.Add(new Label() { Text = record.ProductID.ToString() }, 0, rowIndex);
             tlpDataRecords.Controls.Add(new Label() { Text = record.Name }, 1, rowIndex);

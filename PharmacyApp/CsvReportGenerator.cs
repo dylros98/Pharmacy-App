@@ -13,21 +13,22 @@ namespace PharmacyApp
     class CsvReportGenerator
     {
 
-            private List<SalesReport> Reports;
+        private List<SalesReport> Reports;
 
-            public void GenerateCsv() {
-
+        public void GenerateCsv()
+        {
             using (var stream = new StreamWriter("PharmacyApp\\Reports\\Report.csv"))
             using (var csv = new CsvWriter(stream))
             {
                 csv.WriteRecords(Reports);
             }
-            }
+        }
 
-            public void OpenCsv() {
-                using (var reader = new StreamReader("PharmacyApp\\Reports\\Report.csv"))
-                {
-                }
+        public void OpenCsv()
+        {
+            using (var reader = new StreamReader("PharmacyApp\\Reports\\Report.csv"))
+            {
             }
+        }
     }
 }
