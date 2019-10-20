@@ -8,7 +8,7 @@ namespace PharmacyApp
 {
     class SalesReportGenerator
     {
-        public List<SalesReport> ReportList(bool monthly)
+        public List<SalesReport> ReportList(DateTime startDate, DateTime endDate)
         {
             List<ProductRecord> products = ProductDatabase.GenerateAllProduct();
             List<SalesReport> report = new List<SalesReport>();
@@ -19,9 +19,9 @@ namespace PharmacyApp
                 {
                     ProductID = record.ProductID,
                     Name = record.Name,
-                    Quantity = SalesDatabase.GenerateSalesAmount(record.ProductID, monthly),
+                    Quantity = SalesDatabase.GenerateSalesAmount(record.ProductID, startDate, endDate),
                     Price = record.Price,
-                    Total = Convert.ToDouble(SalesDatabase.GenerateSalesAmount(record.ProductID, monthly)) * record.Price
+                    Total = Convert.ToDouble(SalesDatabase.GenerateSalesAmount(record.ProductID, startDate, endDate)) * record.Price
                 });
             }
             return report;

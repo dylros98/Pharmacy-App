@@ -22,14 +22,15 @@ namespace PharmacyApp
 
         private void BtnWeeklyReport_Click(object sender, EventArgs e)
         {
-            Report weeklyReport = new Report(List.ReportList(false));
+            
+            Report weeklyReport = new Report(List.ReportList(monthCalendar.SelectionRange.Start, monthCalendar.SelectionRange.End));
             weeklyReport.setTitleText("Weekly Sales Report");
             weeklyReport.Show();
         }
 
         private void BtnMonthlyReport_Click(object sender, EventArgs e)
         {
-            Report monthlyReport = new Report(List.ReportList(true));
+            Report monthlyReport = new Report(List.ReportList(monthCalendar.SelectionRange.Start, monthCalendar.SelectionRange.End));
             monthlyReport.setTitleText("Monthly Sales Report");
             monthlyReport.Show();
         }
