@@ -79,8 +79,8 @@ namespace PharmacyApp
 
                     if (editRecord.ShowDialog() == DialogResult.OK)
                     {
-                        saleData = DatabaseContext.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
-                        ProductRecord pRecord = DatabaseContext.GetProductByProductID(saleData.ProductID);
+                        saleData = SalesDatabase.GetSalesRecordWithSaleID(Int32.Parse(tlpDataRecords.GetControlFromPosition(0, selectedRow).Text));
+                        ProductRecord pRecord = ProductDatabase.GetProductByProductID(saleData.ProductID);
                         GUIFunctions.editRecord(tlpDataRecords, selectedRow, saleData, pRecord);
                     }
                 }
