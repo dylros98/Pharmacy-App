@@ -356,7 +356,7 @@ namespace PharmacyApp
             {
                 cnn.Open();
 
-                string stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productID + " AND DateSold BETWEEN " + startDate.ToShortDateString() + " AND " + endDateToShortDateString() + ";";
+                string stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productID + " AND DateSold BETWEEN " + startDate.ToShortDateString() + " AND " + endDate.ToShortDateString() + ";";
 
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
                 rdr = cmd.ExecuteReader();
