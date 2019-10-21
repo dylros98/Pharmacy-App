@@ -13,10 +13,12 @@ namespace PharmacyApp
     public partial class DateSelection : Form
     {
         private SalesReportGenerator List;
+        private CsvReportGenerator csvGenerator;
 
         public DateSelection()
         {
             List = new SalesReportGenerator();
+            csvGenerator = new CsvReportGenerator();
             InitializeComponent();
         }
 
@@ -37,7 +39,10 @@ namespace PharmacyApp
 
         private void BtnGenerateReport_Click(object sender, EventArgs e)
         {
-
+            csvGenerator.GenerateCsv(List.ReportList(monthCalendar.SelectionRange.Start, monthCalendar.SelectionRange.End));
+            Report weeklyReport = new Report(csvGenerator.OpenCsv());
+            weeklyReport.setTitleText("Sales Report");
+            weeklyReport.Show();
         }
     }
 }
