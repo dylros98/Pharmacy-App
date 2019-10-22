@@ -346,7 +346,7 @@ namespace PharmacyApp
         /// <param name="productID">The product id</param>
         /// <param name="monthly">If the report is a monthly report or not</param>
         /// <returns></returns>
-        static public int GenerateSalesAmount(int productID, bool monthly)
+        static public int GenerateSalesAmount(int productID, DateTime startDate, DateTime endDate)
         {
             MySqlConnection cnn = new MySqlConnection(ConnectionString);
             MySqlDataReader rdr = null;
@@ -355,16 +355,9 @@ namespace PharmacyApp
             try
             {
                 cnn.Open();
+               // string stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productID + ";";
+                string stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productID + " AND DateSold BETWEEN " + startDate.ToString("yyyyMMdd") + " AND " + endDate.ToString("yyyyMMdd") + ";";
 
-                string stm = "";
-                if (monthly)
-                {
-                    stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productID + " AND DateSold BETWEEN CURDATE()-INTERVAL 1 MONTH AND CURDATE()";
-                }
-                else
-                {
-                    stm = "SELECT SUM(Quantity) FROM Sales WHERE ProductID = " + productID + " AND DateSold BETWEEN CURDATE()-INTERVAL 1 WEEK AND CURDATE()";
-                }
                 MySqlCommand cmd = new MySqlCommand(stm, cnn);
                 rdr = cmd.ExecuteReader();
 

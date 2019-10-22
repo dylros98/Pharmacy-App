@@ -15,20 +15,24 @@ namespace PharmacyApp
 
         private List<SalesReport> Reports;
 
-        public void GenerateCsv()
+        public void GenerateCsv(List<SalesReport> salesReport)
         {
-            using (var stream = new StreamWriter("PharmacyApp\\Reports\\Report.csv"))
+            using (var stream = new StreamWriter("Reports\\Report.csv"))
             using (var csv = new CsvWriter(stream))
             {
-                csv.WriteRecords(Reports);
+                csv.WriteRecords(salesReport);
             }
         }
 
-        public void OpenCsv()
+        public List<SalesReport> OpenCsv()
         {
-            using (var reader = new StreamReader("PharmacyApp\\Reports\\Report.csv"))
+            using (var reader = new StreamReader("Reports\\Report.csv"))
+            using (var csvReader = new CsvReader(reader))
             {
+                Reports = csvReader.GetRecords<SalesReport>().ToList();
             }
+            return Reports;
         }
+
     }
 }
